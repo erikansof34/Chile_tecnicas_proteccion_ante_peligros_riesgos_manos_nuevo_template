@@ -1,0 +1,317 @@
+/* Estilos para el termómetro */
+#termometro-wrapper {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+#termometro-container {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  margin-bottom: 20px;
+}
+
+#termometro {
+  width: 45px;
+  background: #1a3452;
+  height: 380px;
+  position: relative;
+  border: 9px solid #12253b;
+  border-radius: 20px;
+  z-index: 1;
+  margin: 0 15px;
+}
+
+#termometro:before,
+#termometro:after {
+  position: absolute;
+  content: "";
+  border-radius: 50%;
+}
+
+#termometro:before {
+  width: 100%;
+  height: 42.75px;
+  bottom: 9px;
+  /* background: #1a3452; */
+  z-index: -1;
+}
+
+#termometro:after {
+  transform: translateX(-50%);
+  width: 67.5px;
+  height: 67.5px;
+  background-color: #26b1f4;
+  bottom: -48.5px;
+  border: 9px solid #12253b;
+  z-index: -3;
+  left: 50%;
+}
+
+#termometro #temperature {
+  bottom: 0;
+  background: linear-gradient(#ff7400, #26b1f4) no-repeat bottom;
+  width: 100%;
+  background-size: 100% 380px;
+  transition: all 0.2s ease-in-out;
+  border-radius: 9px;
+}
+
+#termometro #temperature,
+#termometro #temperature:before,
+#termometro #temperature:after {
+  position: absolute;
+}
+
+#left-messages,
+#right-messages {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 120px;
+}
+
+#left-messages div,
+#right-messages div {
+  width: 180px;
+  height: 70px;
+  border: 1px solid #ccc;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin: 5px 0;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#left-messages .centered-text {
+  background: #ed8d8d;
+}
+
+#right-messages .centered-text {
+  background: #afeda4;
+  transform: translateY(70%);
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  opacity: 0;
+}
+
+#right-messages .centered-text.visible {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+#playground {
+  font-size: 1.1em;
+  width: 100%;
+}
+
+#playground #range {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#playground #range input[type=text] {
+  width: 2em;
+  background: transparent;
+  border: none;
+  color: inherit;
+  font: inherit;
+  margin: 0 5px;
+  padding: 0px 5px;
+  border-bottom: 2px solid transparent;
+  transition: all 0.2s ease-in-out;
+}
+
+#range input[type=range] {
+  -webkit-appearance: none;
+  background: transparent;
+  margin: 5.5px 0;
+  width: 60%;
+}
+
+#range input[type=range]::-webkit-slider-runnable-track {
+  cursor: default;
+  height: 10px;
+  transition: all 0.2s ease;
+  width: 100%;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 1px 1px 1px transparent, 0 0 1px rgba(13, 13, 13, 0);
+  background: #12253b;
+  border: 2px solid #12253b;
+  border-radius: 5px;
+}
+
+#range input[type=range]::-webkit-slider-thumb {
+  box-shadow: 4px 4px 4px transparent, 0 0 4px rgba(13, 13, 13, 0);
+  background: #26b1f4;
+  border: 0px solid #1c395a;
+  border-radius: 12px;
+  cursor: pointer;
+  height: 11px;
+  width: 18px;
+  -webkit-appearance: none;
+  margin-top: -2.5px;
+}
+
+/* Estilos responsivos - Versión móvil similar al original */
+@media (max-width: 768px) {
+  #termometro-container {
+    flex-direction: row;
+    padding: 0 10px;
+    justify-content: space-around;
+  }
+
+  #left-messages div,
+  #right-messages div {
+    width: 100%;
+    height: 60px;
+    font-size: 11px;
+    margin: 4px 0;
+  }
+
+  #termometro {
+    height: 320px;
+    margin: 0 10px;
+  }
+
+  #termometro #temperature {
+    background-size: 100% 320px;
+  }
+
+  #right-messages {
+    flex-direction: column-reverse;
+  }
+
+  #right-messages p {
+    order: 1;
+  }
+
+  /* MOSTRAR LOS INPUTS DE 0 Y 100 EN MÓVIL */
+  #playground #range {
+    flex-direction: row;
+    /* Mantener en fila, no columna */
+    width: 100%;
+  }
+
+  #range input[type=text] {
+    display: block;
+    /* Asegurar que se muestren */
+    width: 2.5em;
+    /* Un poco más ancho para móvil */
+    font-size: 14px;
+    /* Tamaño legible */
+  }
+
+  #range input[type=range] {
+    width: 60%;
+    /* Mantener un ancho adecuado */
+    margin: 0 5px;
+    /* Espaciado horizontal */
+  }
+}
+
+@media (max-width: 576px) {
+  #termometro-container {
+    padding: 0 5px;
+  }
+
+  #left-messages div,
+  #right-messages div {
+    font-size: 10px;
+    height: 55px;
+    padding: 3px 5px;
+  }
+
+  #termometro {
+    height: 280px;
+    width: 35px;
+  }
+
+  #termometro #temperature {
+    background-size: 100% 280px;
+  }
+
+  #termometro:after {
+    width: 55px;
+    height: 55px;
+    bottom: -40px;
+  }
+
+  /* MOSTRAR LOS INPUTS DE 0 Y 100 EN MÓVIL */
+  #playground #range {
+    flex-direction: row;
+    /* Mantener en fila, no columna */
+    width: 100%;
+  }
+
+  #range input[type=text] {
+    display: block;
+    /* Asegurar que se muestren */
+    width: 2.5em;
+    /* Un poco más ancho para móvil */
+    font-size: 14px;
+    /* Tamaño legible */
+  }
+
+  #range input[type=range] {
+    width: 60%;
+    /* Mantener un ancho adecuado */
+    margin: 0 5px;
+    /* Espaciado horizontal */
+  }
+}
+
+@media (max-width: 480px) {
+  #termometro-container {
+    justify-content: space-between;
+  }
+
+  #left-messages div,
+  #right-messages div {
+    font-size: 9px;
+    height: 50px;
+  }
+
+  #termometro {
+    height: 250px;
+    margin: 0 5px;
+  }
+
+  #termometro #temperature {
+    background-size: 100% 250px;
+  }
+
+  /* MOSTRAR LOS INPUTS DE 0 Y 100 EN MÓVIL */
+  #playground #range {
+    flex-direction: row;
+    /* Mantener en fila, no columna */
+    width: 100%;
+  }
+
+  #range input[type=text] {
+    display: block;
+    /* Asegurar que se muestren */
+    width: 2.5em;
+    /* Un poco más ancho para móvil */
+    font-size: 14px;
+    /* Tamaño legible */
+  }
+
+  #range input[type=range] {
+    width: 60%;
+    /* Mantener un ancho adecuado */
+    margin: 0 5px;
+    /* Espaciado horizontal */
+  }
+}

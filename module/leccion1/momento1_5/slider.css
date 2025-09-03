@@ -1,0 +1,117 @@
+.video-riesgos {
+    border-radius: 10px;
+    max-width: 80%;
+    margin: auto;
+}
+
+.video-riesgos video {
+    width: 95%;
+    border: 2px solid #c5c9c6;
+    height: auto;
+    max-height: 100%;
+    border-radius: 10px;
+}
+
+
+/* Estilos para la actividad de selección */
+.select-mom1-5-container {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.pcambio-4 {
+    padding: 0.5rem 4.5rem 0.5rem 4.5rem;
+}
+
+.select-mom1-5-activity {
+    text-align: justify;
+}
+
+.select-mom1-5 {
+    border: 2px solid #afafaf;
+    border-radius: 15px;
+    padding: 4px 8px;
+    font-size: 14px;
+    color: #3a3a3a;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.3s;
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 8px center;
+    background-size: 16px;
+    min-width: 120px;
+    background-color: white;
+}
+
+.select-mom1-5:focus {
+    border-color: #6b21a8;
+}
+
+.select-mom1-5-item {
+    margin-bottom: 12px;
+}
+
+.select-mom1-5-text {
+    line-height: 1.6;
+}
+
+.select-mom1-5-feedback {
+    border-radius: 6px;
+    text-align: center;
+    font-weight: 500;
+}
+
+.select-mom1-5-correct {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.select-mom1-5-incorrect {
+    background-color: #F44336;
+    color: white;
+}
+
+.select-mom1-5-results {
+    font-weight: bold;
+    margin-top: 8px;
+}
+
+/* Estilos para los selects */
+.select-mom1-5-selected {
+    background-color: #6e3cd2;
+    color: white;
+    border-color: #6e3cd2;
+}
+
+.select-mom1-5-correct-answer {
+    background-color: #4CAF50 !important;
+    color: white !important;
+    border-color: #388E3C !important;
+}
+
+.select-mom1-5-incorrect-answer {
+    background-color: #F44336 !important;
+    color: white !important;
+    border-color: #D32F2F !important;
+}
+
+/* Estilo para el mensaje de error */
+.select-mom1-5-error {
+    color: #D32F2F;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+/* Estilo para botón deshabilitado */
+.select-mom1-5-reset:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+@media (max-width: 768px) {
+    .pcambio-4 {
+        padding: 1rem 1rem 1rem 1rem;
+    }
+}

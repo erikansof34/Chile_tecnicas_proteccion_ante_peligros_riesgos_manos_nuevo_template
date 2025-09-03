@@ -1,0 +1,13 @@
+.video-riesgos {
+  border-radius: 10px;
+  max-width: 50%;
+  margin: auto;
+}
+
+.video-riesgos video {
+  width: 95%;
+  border: 2px solid #c5c9c6;
+  height: auto;
+  max-height: 100%;
+  border-radius: 10px;
+}

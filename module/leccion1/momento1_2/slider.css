@@ -1,0 +1,71 @@
+.card-custom {
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  background: white;
+  max-width: 95%;
+  width: 100%;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+@media (min-width: 576px) {
+  .card-custom {
+    max-width: 220px;
+  }
+}
+
+@media (min-width: 768px) {
+  .card-custom {
+    max-width: 220px;
+  }
+}
+
+@media (min-width: 992px) {
+    .card-custom {
+        max-width: 180px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .card-custom {
+        max-width: 208px;
+    }
+}
+
+@media (min-width: 1400px) {
+  .card-custom {
+    max-width: 220px;
+  }
+}
+
+.card-header-custom {
+  background-color: #022249;
+  /* Azul tipo Bootstrap info */
+  color: white;
+  padding: 1rem;
+}
+
+.card-body-custom {
+  padding: 0.5rem;
+}
+
+.card-body-custom h5 {
+  margin-bottom: 0.5rem;
+}
+
+.card-body-custom p {
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+.card-custom:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.12);
+}
+
+
+
+.sf-p-1 {
+  padding: 1rem;
+}
+

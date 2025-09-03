@@ -1,0 +1,169 @@
+/* Estilos para la actividad de ordenamiento */
+.ordenar-mom3-4-container {
+    border-radius: 10px;
+}
+
+.ordenar-mom3-4-instructions {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+}
+
+.ordenar-mom3-4-items-container {
+    display: flex;
+    gap: 10px;
+}
+
+.ordenar-mom3-4-static-numbers {
+    display: flex;
+    flex-direction: column;
+}
+
+.static-number {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-size: 18px;
+    color: #4b5563;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 30px;
+    transition: color 0.3s ease;
+}
+
+.static-number.correct-position {
+    color: #4CAF50 !important;
+}
+
+.static-number.incorrect-position {
+    color: #F44336 !important;
+}
+
+.ordenar-mom3-4-items {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    flex-grow: 1;
+}
+
+.ordenar-mom3-4-item {
+    font-family: 'Montserrat', sans-serif;
+    padding: 12px 15px;
+    background-color: #fff;
+    border: 2px solid #6c757d;
+    border-radius: 8px;
+    cursor: move;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    position: relative;
+    color: #4b5563;
+}
+
+.ordenar-mom3-4-item:hover {
+    background-color: #e9ecef;
+    border-color: #495057;
+}
+
+.ordenar-mom3-4-item.dragging {
+    opacity: 0.8;
+    background-color: rgba(110, 60, 210, 0.8);
+    /* Morado claro opaco */
+    color: #fff;
+    /* Texto blanco */
+    transform: scale(1.02);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    border-color: #6e3cd2;
+}
+
+.ordenar-mom3-4-item.drag-over {
+    border-top: 3px solid #0d6efd;
+    margin-top: 10px;
+}
+
+.ordenar-mom3-4-item.correct {
+    background-color: #4CAF50;
+    color: #fff;
+    border-color: #4CAF50;
+}
+
+.ordenar-mom3-4-item.incorrect {
+    color: #fff;
+    background-color: #F44336;
+    border-color: #F44336;
+}
+
+.ordenar-mom3-4-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.ordenar-mom3-4-validate,
+.ordenar-mom3-4-reset {
+    min-width: 120px;
+    transition: opacity 0.3s ease;
+}
+
+.ordenar-mom3-4-validate:disabled,
+.ordenar-mom3-4-reset:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.ordenar-mom3-4-feedback {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    border-radius: 5px;
+    margin-top: 20px;
+    padding: 10px;
+}
+
+.ordenar-mom3-4-result {
+    font-weight: bold;
+    color: #fff;
+    margin: 0;
+}
+
+.success-feedback {
+    background-color: #4CAF50;
+}
+
+.error-feedback {
+    background-color: #e63946;
+}
+
+.icon-success {
+    color: #fff;
+    background-color: #4CAF50;
+    border-radius: 50%;
+    padding: 3px;
+    text-stroke: 2px white;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 10px;
+    height: 10px;
+}
+
+.icon-error {
+    color: #fff;
+    background-color: #dc3545;
+    border-radius: 50%;
+    padding: 3px;
+    text-stroke: 2px white;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 10px;
+    height: 10px;
+}
+
+/* Estilo para el clon que se muestra al arrastrar */
+.ordenar-mom3-4-item.clone {
+    opacity: 0.7;
+    transform: rotate(5deg);
+}

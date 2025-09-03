@@ -1,0 +1,195 @@
+/* Tarjeta giratoria (flip) con soporte para clases card-mom3-10 */
+.card-mom3-10 {
+    perspective: 1000px;
+    cursor: pointer;
+    opacity: 0;
+    transform: translateY(32px) scale(0.97);
+    animation: cardMom310FadeIn 0.7s cubic-bezier(.4, 0, .2, 1) forwards;
+    width: 100%;
+    /* Asegura que la tarjeta ocupe todo el ancho disponible */
+}
+
+.card-mom3-10-inner {
+    position: relative;
+    width: 100%;
+    height: 170px;
+    transition: transform 0.6s ease;
+    transform-style: preserve-3d;
+}
+
+.card-mom3-10.flipped .card-mom3-10-inner {
+    transform: rotateY(180deg);
+}
+
+.card-mom3-10-front,
+.card-mom3-10-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 0.5rem;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-mom3-10-front {
+    background-color: #001b2e;
+    color: #ffffff;
+}
+
+.card-mom3-10-back {
+    background-color: #0B3D5C;
+    color: #ffffff;
+    transform: rotateY(180deg);
+}
+
+.card-mom3-10-back audio {
+    width: 100%;
+    height: 40px;
+    min-height: 24px;
+    max-height: 40px;
+    outline: none;
+    margin-top: 0.5rem;
+    background: #fff;
+    border-radius: 1.4rem;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.07);
+    padding: 0.05rem 0;
+}
+
+/* Animación de entrada para las tarjetas */
+.card-mom3-10:nth-child(1) {
+    animation-delay: 0.05s;
+}
+
+.card-mom3-10:nth-child(2) {
+    animation-delay: 0.10s;
+}
+
+.card-mom3-10:nth-child(3) {
+    animation-delay: 0.15s;
+}
+
+.card-mom3-10:nth-child(4) {
+    animation-delay: 0.20s;
+}
+
+.card-mom3-10:nth-child(5) {
+    animation-delay: 0.25s;
+}
+
+.card-mom3-10:nth-child(6) {
+    animation-delay: 0.30s;
+}
+
+.card-mom3-10:nth-child(7) {
+    animation-delay: 0.35s;
+}
+
+.card-mom3-10:nth-child(8) {
+    animation-delay: 0.40s;
+}
+
+@keyframes cardMom310FadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Hover y feedback visual para la tarjeta */
+.card-mom3-10:not(.flipped):hover .card-mom3-10-inner,
+.card-mom3-10:not(.flipped):focus .card-mom3-10-inner {
+    box-shadow: 0 10px 24px rgba(2, 34, 73, 0.13);
+    transform: scale(1.04);
+    transition: box-shadow 0.22s, transform 0.22s;
+    z-index: 2;
+}
+
+/* Efecto de "presionado" al hacer click/tap */
+.card-mom3-10:not(.flipped):active .card-mom3-10-inner {
+    transform: scale(0.97);
+    box-shadow: 0 2px 6px rgba(2, 34, 73, 0.10);
+}
+
+/* Animación sutil al icono en hover */
+.card-mom3-10-front i {
+    transition: transform 0.25s cubic-bezier(.4, 0, .2, 1);
+    display: inline-block;
+}
+
+.card-mom3-10:hover .card-mom3-10-front i {
+    transform: scale(1.18) rotate(-8deg);
+}
+
+/* Mejora la transición del flip */
+.card-mom3-10 .card-mom3-10-inner {
+    transition: transform 0.6s cubic-bezier(.4, 0, .2, 1), box-shadow 0.22s;
+}
+
+.card-mom3-10.flipped .card-mom3-10-inner {
+    transform: rotateY(180deg) !important;
+}
+
+/* Responsive fix para audio en móviles */
+@media (max-width: 576px) {
+    .card-mom3-10-inner {
+        height: 200px;
+    }
+}
+
+.card-mom3-10-front i,
+.card-mom3-10-back i {
+    font-size: 2rem;
+}
+
+#sfCardsContainerMom3Sld10 {
+    max-width: 100%;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    #sfCardsContainerMom3Sld10 {
+        margin: 1.25rem 0.75rem;
+    }
+
+    .card-mom3-10-inner {
+        height: 200px;
+    }
+}
+
+@media (max-width: 768px) {
+    #sfCardsContainerMom3Sld10 {
+        margin: 1rem 0.5rem;
+    }
+
+    .card-mom3-10-inner {
+        height: 180px;
+    }
+}
+
+/* Nuevos estilos para hacer las tarjetas más anchas */
+@media (min-width: 768px) {
+    #sfCardsContainerMom3Sld10 .col-md-4 {
+        flex: 0 0 33.333333%;
+        max-width: 33.333333%;
+        padding: 0 8px;
+        /* Añade un poco de espacio entre tarjetas */
+    }
+
+    #sfCardsContainerMom3Sld10 .ms-md-auto,
+    #sfCardsContainerMom3Sld10 .me-md-auto {
+        flex: 0 0 33.333333%;
+        max-width: 33.333333%;
+    }
+}
+
+@media (min-width: 992px) {
+    #sfCardsContainerMom3Sld10 .col-lg-3 {
+        flex: 0 0 30%;
+        max-width: 30%;
+    }
+}

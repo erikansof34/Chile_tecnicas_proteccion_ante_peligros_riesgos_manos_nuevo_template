@@ -1,0 +1,158 @@
+<section class="row">
+    <div class="animate__animated animate__fadeInLeftBig col-12 sf-bg-dark sf-ct-col">
+        <img src="../../assets/img/avatars/avatar_hombre_cruzado_brazos_fondo_azul.webp" alt="avatar"
+            class="sf-img-xl-10 mx-auto d-none d-xl-block">
+        <div class="ms-xl-4 mx-xl-0">
+            <h1 class="sf-text-white text-center">
+                Observaciones de seguridad
+            </h1>
+            <img src="../../assets/img/avatars/avatar_hombre_cruzado_brazos_fondo_azul.webp" alt="avatar"
+                class="sf-img-80 sf-img-sm-60 sf-img-md-40 sf-img-lg-30 mx-auto d-xl-none mb-2">
+            <p class="sf-text-white text-justify">
+                Las <strong>observaciones de seguridad</strong> son un <strong>mecanismo proactivo</strong> para
+                verificar que los
+                trabajadores
+                cumplan con los
+                <strong>procedimientos seguros y directrices establecidas,</strong> con el fin de prevenir accidentes
+                por <strong>conductas
+                    inseguras</strong>
+            </p>
+        </div>
+    </div>
+
+    <div class="animate__animated animate__fadeInRightBig col-12 p-0 d-flex justify-content-center">
+        <div class="sf-cb-row">
+            <div class="container obs-seg-mom3-8">
+                <div class="row">
+                    <div class="col-lg-6 col-md-12 pt-2rem">
+                        <div class="my-4 my-lg-0 text-center">
+                            <i class="hipt hipt-light mb-3">
+                                Escucha los audios para identificar los elementos de un formulario de observación.
+                                <i class="icon-inline icon-inline--start fa-solid fa-arrow-turn-down"></i>
+                            </i>
+                            <div
+                                class="animate__animated animate__flipInX animate__delay-1s imagen-botones_obs-seg-mom3-8">
+                                <button class="boton_obs-seg-mom3-8 boton-1"
+                                    onclick="mostrarCardObsSegMom38('1')">1</button>
+                                <button class="boton_obs-seg-mom3-8 boton-2"
+                                    onclick="mostrarCardObsSegMom38('2')">2</button>
+                                <button class="boton_obs-seg-mom3-8 boton-3"
+                                    onclick="mostrarCardObsSegMom38('3')">3</button>
+                                <button class="boton_obs-seg-mom3-8 boton-4"
+                                    onclick="mostrarCardObsSegMom38('4')">4</button>
+                                <button class="boton_obs-seg-mom3-8 boton-5"
+                                    onclick="mostrarCardObsSegMom38('5')">5</button>
+                                <button class="boton_obs-seg-mom3-8 boton-6"
+                                    onclick="mostrarCardObsSegMom38('6')">6</button>
+                            </div>
+                            <button class="sf-btn sf-btn-purple obs-seg-mom3-8" data-bs-toggle="modal"
+                                data-bs-target="#obs-seg-mom3-8-recuerda">
+                                <i class="fa fa-question-circle"></i> Recuerda...</button>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-12 pt-2rem">
+                        <div class="my-4 my-lg-0 text-center">
+                            <i class="hipt hipt-light mb-3">
+                                Si deseas recordarlos, haz clic sobre el audio nuevamente
+                                <i class="icon-inline icon-inline--start fa-solid fa-arrow-turn-down"></i>
+                            </i>
+                            <div class="tarjetas_obs-seg-mom3-8">
+                                <div id="card-1_obs-seg-mom3-8" class="card_obs-seg-mom3-8">
+                                    <p>Datos de identificación</p>
+                                    <audio id="audio-1_obs-seg-mom3-8"
+                                        src="../../assets/audio/momento3_8/datos-de-identificacion-m3-ppt-34.mp3"
+                                        controls></audio>
+                                </div>
+
+                                <div id="card-2_obs-seg-mom3-8" class="card_obs-seg-mom3-8">
+                                    <p>Descripción clara de la tarea</p>
+                                    <audio id="audio-2_obs-seg-mom3-8"
+                                        src="../../assets/audio/momento3_8/descripcion-m3-ppt-34.mp3" controls></audio>
+                                </div>
+
+                                <div id="card-3_obs-seg-mom3-8" class="card_obs-seg-mom3-8">
+                                    <p>Condiciones de trabajo</p>
+                                    <audio id="audio-3_obs-seg-mom3-8"
+                                        src="../../assets/audio/momento3_8/condiciones-m3-ppt-34.mp3" controls></audio>
+                                </div>
+
+                                <div id="card-4_obs-seg-mom3-8" class="card_obs-seg-mom3-8">
+                                    <p>Verificación del cumplimiento</p>
+                                    <audio id="audio-4_obs-seg-mom3-8"
+                                        src="../../assets/audio/momento3_8/verificacion-m3-ppt-34.mp3" controls></audio>
+                                </div>
+
+                                <div id="card-5_obs-seg-mom3-8" class="card_obs-seg-mom3-8">
+                                    <p>Eventos relevantes</p>
+                                    <audio id="audio-5_obs-seg-mom3-8"
+                                        src="../../assets/audio/momento3_8/eventos-relevantes-observados-positivos-o-negativos-m3-ppt-34.mp3"
+                                        controls></audio>
+                                </div>
+
+                                <div id="card-6_obs-seg-mom3-8" class="card_obs-seg-mom3-8">
+                                    <p>Mejoras acordadas</p>
+                                    <audio id="audio-6_obs-seg-mom3-8"
+                                        src="../../assets/audio/momento3_8/mejoras-acordadas-m3-ppt-34.mp3"
+                                        controls></audio>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Modal -->
+<div class="modal fade" id="obs-seg-mom3-8-recuerda" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lga">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title"> Recuerda...</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                    <i class="fa fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="text-center mb-4">
+                    <img src="../../assets/img/botones/recuerda_icono.webp" alt="Recuerda"
+                        class="sf-img-10 mx-auto mb-3">
+                    <h4 class="sf-text-purple">Pasos para realizar observaciones de seguridad</h4>
+                </div>
+
+                <div class="row g-4">
+                    <div class="col-lg-6 col-md-6">
+                        <div class="card shadow-sm animate__animated animate__fadeInLeft border-g-color">
+                            <div class="card-body">
+                                <ul class="text-start small mb-0">
+                                    <li><strong>Preparación y concentración:</strong> El observador debe conocer los
+                                        procedimientos y enfocarse únicamente en la tarea, sin distracciones.</li>
+                                    <li><strong>Ambiente adecuado:</strong> Realizar la observación sin interrupciones
+                                        y, si es posible, con el conocimiento del trabajador.</li>
+                                    <li><strong>Visión global:</strong> Evitar centrarse solo en detalles; comprender la
+                                        tarea en su totalidad para identificar riesgos reales.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 col-md-6">
+                        <div class="card shadow-sm animate__animated animate__fadeInRight border-p-color">
+                            <div class="card-body">
+                                <ul class="text-start small mb-0">
+                                    <li><strong>Registro claro:</strong> Tomar notas breves durante la observación y
+                                        completar el formulario después.</li>
+                                    <li><strong>Objetividad:</strong> No dejarse influir por ideas preconcebidas ni
+                                        buscar errores de forma intencionada.</li>
+                                    <li><strong>Diálogo constructivo:</strong> Al finalizar, conversar con el trabajador
+                                        para reforzar buenas prácticas y proponer mejoras juntos.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

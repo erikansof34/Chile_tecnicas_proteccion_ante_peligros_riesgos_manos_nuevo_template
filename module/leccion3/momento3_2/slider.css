@@ -1,0 +1,289 @@
+/* Contenedor principal */
+.quiz-container-chileSORD {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+/* Contenedor de tarjetas - Versión Web */
+.cards-container-chileSORD {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Estilo de cada tarjeta - Versión Web */
+.card-container-chileSORD {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 15rem;
+    transition: background-color 0.3s ease;
+}
+
+.card-container-chileSORD.correct {
+    background-color: #4caf50;
+}
+
+.card-container-chileSORD.incorrect {
+    background-color: #f44336;
+}
+
+/* Contenedor imagen-select */
+.image-select-container-chileSORD {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    width: 100%;
+}
+
+/* Contenedor de imagen y validación */
+.image-validation-container-chileSORD {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Imagen normal (sin circular) */
+.step-image-chileSORD {
+    width: 90px;
+    height: 90px;
+    object-fit: contain;
+}
+
+/* Título de la card */
+.card-title-chileSORD {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    color: #0f1721;
+    text-align: center;
+}
+
+/* Select - Versión Web */
+.select-container-chileSORD {
+    width: 100%;
+    max-width: 140px;
+    position: relative;
+    margin-top: 5px;
+}
+
+.select-container-chileSORD select {
+    width: 100%;
+    padding: 0.5rem 2rem 0.5rem 0.5rem;
+    border: 2px solid #0f1721;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    font-size: 1rem;
+    color: #333;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+.select-container-chileSORD::after {
+    content: "▼";
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    pointer-events: none;
+    font-size: 0.7rem;
+    color: #0f1721;
+    z-index: 1;
+}
+
+/* Select correcto/incorrecto */
+.select-container-chileSORD select.correct-select {
+    background-color: #e8f5e9;
+    border-color: #4caf50;
+}
+
+.select-container-chileSORD select.incorrect-select {
+    background-color: #ffebee;
+    border-color: #f44336;
+}
+
+/* Ícono de validación */
+.validation-icon-container-chileSORD {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    pointer-events: none;
+    text-align: center;
+}
+
+.validation-icon-chileSORD {
+    width: 35px;
+    height: 25px;
+    object-fit: contain;
+    opacity: 0.9;
+}
+
+/* Texto de feedback */
+.feedback-text-chileSORD {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+    width: 100%;
+    margin: 3px 0;
+}
+
+.feedback-text-chileSORD.correct-text {
+    color: #fff;
+}
+
+.feedback-text-chileSORD.incorrect-text {
+    color: #fff;
+}
+
+/* Contenedor del reproductor de audio global */
+.audio-global-container {
+    width: 100%;
+    max-width: 429px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+/* Reproductor de audio compacto */
+.audio-global-container audio {
+    height: 40px;
+    width: 70%;
+}
+
+/* Resultados */
+.results-container-chileSORD {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+/* Mensajes de feedback */
+.feedback-message-chileSORD {
+    width: 100%;
+    text-align: center;
+    border-radius: 5px;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+    margin: 10px 0;
+    padding: 10px;
+}
+
+.feedback-message-chileSORD.success-message {
+    color: #2e7d32;
+    background-color: #e8f5e9;
+}
+
+.feedback-message-chileSORD.error-message {
+    color: #c62828;
+    background-color: #ffebee;
+}
+
+/* Botón de reinicio */
+.reset-button-container-chileSORD {
+    margin-bottom: 1rem;
+}
+
+.reset-button-container-chileSORD button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Mensaje inicial */
+.initial-message-chileSORD {
+    width: 100%;
+    max-width: 600px;
+    margin: 0.3rem;
+    padding: 1rem;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    color: #6c757d;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Media query para dispositivos móviles */
+@media (max-width: 768px) {
+    .cards-container-chileSORD {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+
+    .card-container-chileSORD {
+        width: 100%;
+        max-width: 140px;
+        padding: 0.8rem;
+        margin: 0 auto;
+    }
+
+    .step-image-chileSORD {
+        width: 70px;
+        height: 70px;
+    }
+
+    .validation-icon-chileSORD {
+        width: 30px;
+        height: 22px;
+    }
+
+    .card-title-chileSORD {
+        font-size: 16px;
+    }
+
+    .select-container-chileSORD {
+        max-width: 120px;
+    }
+
+    .select-container-chileSORD select {
+        padding: 0.4rem;
+        font-size: 1rem;
+    }
+
+    .audio-global-container {
+        width: 100%;
+        padding: 0 15px;
+    }
+
+    .feedback-text-chileSORD {
+        font-size: 11px;
+    }
+
+    .feedback-message-chileSORD {
+        max-width: 100%;
+        padding: 10px;
+        font-size: 0.9rem;
+        margin: 10px 0;
+    }
+
+    .initial-message-chileSORD {
+        width: 80%;
+        font-size: 1rem;
+        padding: 0.8rem;
+        margin: 1rem auto;
+    }
+}

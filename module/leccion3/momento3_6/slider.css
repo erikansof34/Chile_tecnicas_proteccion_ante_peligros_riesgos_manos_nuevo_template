@@ -1,0 +1,174 @@
+/* Estilos para la actividad de selección */
+.select-mom3-9-container {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.pcambio-4 {
+    padding: 0.5rem 4.5rem 0.5rem 4.5rem;
+}
+
+.select-mom3-9-activity {
+    text-align: justify;
+}
+
+.select-mom3-9 {
+    border: 2px solid #afafaf;
+    border-radius: 15px;
+    padding: 4px 8px;
+    font-size: 14px;
+    color: #3a3a3a;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.3s;
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 8px center;
+    background-size: 16px;
+    min-width: 120px;
+    background-color: white;
+}
+
+.select-mom3-9:focus {
+    border-color: #6b21a8;
+}
+
+.select-mom3-9-item {
+    margin-bottom: 12px;
+}
+
+.select-mom3-9-text {
+    line-height: 1.6;
+}
+
+.select-mom3-9-feedback {
+    padding: 8px 12px;
+    border-radius: 6px;
+    text-align: center;
+    font-weight: 500;
+}
+
+.select-mom3-9-correct {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.select-mom3-9-incorrect {
+    background-color: #F44336;
+    color: white;
+}
+
+.select-mom3-9-results {
+    font-weight: bold;
+    margin-top: 8px;
+}
+
+/* Estilos para los selects */
+.select-mom3-9-selected {
+    background-color: #6e3cd2;
+    color: white;
+    border-color: #6e3cd2;
+}
+
+.select-mom3-9-correct-answer {
+    background-color: #4CAF50 !important;
+    color: white !important;
+    border-color: #388E3C !important;
+}
+
+.select-mom3-9-incorrect-answer {
+    background-color: #F44336 !important;
+    color: white !important;
+    border-color: #D32F2F !important;
+}
+
+/* Estilo para el mensaje de error */
+.select-mom3-9-error {
+    color: #D32F2F;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+/* Estilo para botón deshabilitado */
+.select-mom3-9-reset:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+@media (max-width: 768px) {
+    .pcambio-4 {
+        padding: 1rem 1rem 1rem 1rem;
+    }
+}
+
+/* Estilos para las tarjetas en el modal */
+.modal .card {
+    border-radius: 8px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.modal .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.modal .card-title {
+    color: #6e3cd2;
+    font-weight: 600;
+}
+
+.modal .card-title i {
+    margin-right: 10px;
+}
+
+.modal ul {
+    padding-left: 20px;
+}
+
+.modal ul li {
+    line-height: 1.5;
+    font-size: 1rem;
+}
+
+.card-body {
+    flex: 1 1 auto;
+    padding: 0.5rem 0.5rem;
+}
+
+/* Estilos para el encabezado del modal */
+.modal-header {
+    border-bottom: 2px solid #6e3cd2;
+}
+
+.modal-title {
+    font-weight: 700;
+    color: #6e3cd2;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    .modal .card-body {
+        padding: 15px;
+    }
+
+    .modal .card-title {
+        font-size: 1.1rem;
+    }
+
+    .modal ul li {
+        font-size: 0.9rem;
+    }
+
+    .m-4-act {
+        margin: 1rem;
+    }
+}
+
+.border-g-color {
+    border-left: 5px solid #43b36a;
+}
+
+.border-p-color {
+    border-left: 5px solid #C0185D;
+}

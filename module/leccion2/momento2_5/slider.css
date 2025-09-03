@@ -1,0 +1,209 @@
+/* Estilos para la actividad de ordenar pasos */
+.ordenar-pasos-container {
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 10px 20px;
+  background: #fcfcfc;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Versión Web (Drag & Drop) */
+.contenedor-pasosWEB {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.tarjeta-paso1 {
+  position: relative;
+  background: #0f172a;
+  color: #ffffff;
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 5px;
+  cursor: grab;
+  transition: background 0.3s ease;
+  border: 1px solid #ddd;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 16px;
+}
+
+.tarjeta-paso1.correcto {
+  background: #4caf50;
+  color: white;
+  border-color: #4caf50;
+}
+
+.tarjeta-paso1.incorrecto {
+  background: #f44336;
+  color: white;
+  border-color: #f44336;
+  justify-content: center;
+  gap: 10px;
+}
+
+.botones-containerOP {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 10px !important;
+}
+
+
+
+.btn-validar:hover:not(:disabled) {
+  background: #6d28d9;
+}
+
+.btn-validar:disabled {
+  background: #b9a5ee;
+  cursor: not-allowed;
+}
+
+
+.resultadoOP {
+  text-align: center;
+  margin-top: 6px;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.resultadoOP.correcto {
+  color: #4caf50;
+  margin: 0px !important;
+}
+
+.resultadoOP.incorrecto {
+  color: #f44336;
+  margin: 0px !important;
+}
+
+.icono-resultado {
+  width: 24px;
+  height: 24px;
+  margin: 0;
+}
+
+.feedback-tarjeta {
+  position: absolute;
+  top: -12px;
+  right: -24px;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.contenido-tarjeta {
+  flex: 1;
+  text-align: left;
+}
+
+.resultado-contenedor {
+  color: #8f8f8f;
+  font-size: 16px;
+}
+
+/* Versión Móvil (Selects) */
+.contenedor-pasosMOBILE {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  max-width: 800px;
+  background: #ffffff;
+}
+
+.tarjeta-paso-mobile {
+  padding: 15px;
+  background: #ffffff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  text-align: justify;
+  font-size: 16px;
+  color: #8f8f8f;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.tarjeta-paso-mobile.seleccionado {
+  background-color: #6e3cd2;
+  color: #fff;
+}
+
+.tarjeta-paso-mobile.correcto {
+  background-color: #4caf50;
+  color: #fff;
+}
+
+.tarjeta-paso-mobile.incorrecto {
+  background-color: #f44336;
+  color: #fff;
+}
+
+.respuesta-select {
+  width: 100%;
+  padding: 8px;
+  font-size: 16px;
+  text-align: center;
+  border-radius: 12px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+.respuesta-select.seleccionado {
+  background-color: #8d5dee;
+  color: #fff;
+}
+
+.respuesta-select.correcto {
+  background-color: #4caf50;
+  color: #fff;
+}
+
+.respuesta-select.incorrecto {
+  background-color: #f44336;
+  color: #fff;
+}
+
+.respuesta-select:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.texto-verde {
+  color: #4caf50;
+  font-weight: bold;
+}
+
+.texto-rojo {
+  color: #f44336;
+  font-weight: bold;
+}
+
+/* Ocultar versión no correspondiente */
+.mobile-version {
+  display: none;
+}
+
+.web-version {
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .mobile-version {
+    display: block;
+  }
+
+  .web-version {
+    display: none;
+  }
+}

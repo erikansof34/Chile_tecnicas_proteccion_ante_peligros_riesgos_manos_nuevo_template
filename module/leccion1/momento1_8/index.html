@@ -1,0 +1,107 @@
+<section class="row h-100">
+  <div class="animate__animated animate__fadeInLeftBig  col-md-12 col-lg-6 sf-bg-dark sf-cl-row">
+    <h1 class="sf-text-white text-center">Factores que aumentan el riesgo<br>
+      <span class="sf-text-purple">Los peligros pueden estar en nuestras manos…</span>
+    </h1>
+    <img src="../../assets/img/avatars/avatar_mujer_mirando_de frente_cuaderno_bajo_el_brazo_fondo_azul.webp"
+      alt="avatar" class="sf-img-80 sf-img-md-60 sf-img-lg-80 sf-img-xl-40 mx-auto mb-2">
+    <p class="text-justify sf-text-white">
+      Tatiana quiere recordar a todos en la empresa los FACTORES QUE AUMENTAN EL RIESGO, y las MEDIDAS PREVENTIVAS que
+      lo
+      disminuyen. Realiza la actividad y observa la información:
+    </p>
+    <button class="sf-btn sf-btn-purple" data-bs-toggle="modal" data-bs-target="#sld1_8_abre_la_mano">
+      <i class="fa fa-question-circle"></i> Abre la mano
+    </button>
+  </div>
+
+  <div class="animate__animated animate__fadeInRightBig col-md-12 col-lg-6 sf-cr-row">
+    <i class="hipt hipt-light mb-3">
+      Arrastra la temperatura en el TERMOMETRO DE RIESGO y revisa los Factores y las Medidas preventivas
+      <i class="icon-inline icon-inline--start fa-solid fa-arrow-turn-down"></i>
+    </i>
+    <!-- termometro -->
+    <div class="animate__animated animate__fadeInUp animate__delay-1s" id="termometro-wrapper">
+      <div id="termometro-container">
+        <div id="left-messages">
+          <p>Factores de riesgo</p>
+          <div class="centered-text">Mal clima o entorno de trabajo deficiente</div>
+          <div class="centered-text">Mal estado del área de trabajo</div>
+          <div class="centered-text">Mal estado de herramientas</div>
+          <div class="centered-text">Mal estado o no uso de EPP</div>
+          <div class="centered-text">Falta de entrenamiento</div>
+        </div>
+
+        <div id="termometro">
+          <div id="temperature" style="height: 0%;"></div>
+        </div>
+
+        <div id="right-messages">
+          <p>Medidas <br> preventivas</p>
+          <div class="centered-text" data-level="5">Actualizar competencias con formación continua</div>
+          <div class="centered-text" data-level="4">Proporcionar EPP adecuados y en buen estado</div>
+          <div class="centered-text" data-level="3">Mantenimiento preventivo, equipos y herramientas</div>
+          <div class="centered-text" data-level="2">Área de trabajo limpia y nivelada</div>
+          <div class="centered-text" data-level="1">Inspecciones regulares, medidas correctivas</div>
+        </div>
+      </div>
+
+      <div id="playground">
+        <div id="range">
+          <input id="minTemp" type="text" value="0" readonly>
+          <input id="tempRange" type="range" min="0" max="100" value="0">
+          <input id="maxTemp" type="text" value="100" readonly>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Modal -->
+<div class="modal fade" id="sld1_8_abre_la_mano" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Abre la mano</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"><i
+            class="fa fa-times"></i></button>
+      </div>
+      <div class="modal-body">
+        <img src="../../assets/img/botones/sabias_que_icono.webp" alt="" class="sf-img-30 mx-auto">
+        <p class="text-justify">
+          Dentro de las Medidas Preventivas, más importantes para el CUIDADO DE LAS MANOS, podemos recomendar:
+        </p>
+        <ul>
+          <li>Realizar inspecciones regulares y mantención de todas las herramientas.</li>
+          <li>Reemplazar o reparar herramientas defectuosas de inmediato.</li>
+          <li>Capacitar a los trabajadores en la mantención y uso adecuado de las herramientas.</li>
+          <li>Proporcionar formación completa sobre el uso adecuado de las herramientas y las prácticas seguras.</li>
+          <li>Fomentar una cultura de seguridad.</li>
+          <li>El estado de las herramientas es fundamental para la seguridad en el trabajo. Las herramientas defectuosas
+            o mal mantenidas pueden ser peligrosas y provocar accidentes graves en las manos.</li>
+        </ul>
+        <div class="text-center"> <!-- 🔹 bloque centrado -->
+          <p class="hipt hipt-light mb-3">
+            Haz clic para escuchar el audio
+            <i class="icon-inline icon-inline--start fa-solid fa-arrow-turn-down"></i>
+          </p>
+          <div class="audio-center">
+            <audio class="audio-con-transcripcion" controls data-transcripcion='[
+              {"start": 0, "end": 6, "text": "Dentro de las Medidas Preventivas, más importantes para el CUIDADO DE LAS MANOS, podemos recomendar: "},
+              {"start": 7, "end": 12, "text": "Realizar inspecciones regulares y mantenimiento de todas las herramientas."},
+              {"start": 12, "end": 17, "text": "Reemplazar o reparar herramientas defectuosas de inmediato."},
+              {"start": 17, "end": 22, "text": "Capacitar a los trabajadores en el mantenimiento y uso adecuado de las herramientas.  "},
+              {"start": 23, "end": 29, "text": "Proporcionar formación completa sobre el uso adecuado de las herramientas y las prácticas seguras. "},
+              {"start": 30, "end": 32, "text": "Fomentar una cultura de seguridad."},
+              {"start": 33, "end": 38, "text": "El estado de las herramientas es fundamental para la seguridad en el trabajo."},
+              {"start": 38, "end": 46, "text": "Las herramientas defectuosas o mal mantenidas pueden ser peligrosas y provocar accidentes graves en las manos."}  
+            ]'>
+              <source src="./momento1_8/audio/sld8_l1_medidas_preventivas.mp3" type="audio/mp3">
+            </audio>
+            <i class="transcription-toggle fas fa-closed-captioning audio-estilos"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

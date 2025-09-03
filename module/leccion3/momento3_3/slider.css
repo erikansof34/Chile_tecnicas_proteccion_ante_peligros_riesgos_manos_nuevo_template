@@ -1,0 +1,169 @@
+.vigilancia-mom3-3-container {
+    background-color: #f8f9fa;
+}
+
+.vigilancia-mom3-3-btn {
+    background-color: #e9ecef;
+    color: #495057;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 5px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.vigilancia-mom3-3-btn.active {
+    background-color: #6e3cd2;
+    color: white;
+}
+
+.vigilancia-mom3-3-btn:hover {
+    background-color: #dee2e6;
+}
+
+.vigilancia-mom3-3-btn.active:hover {
+    background-color: #6e3cd2;
+}
+
+.vigilancia-mom3-3-carousel {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.vigilancia-mom3-3-img {
+    border: 2px solid #6e3cd2;
+    box-sizing: border-box;
+    height: 18rem;
+    object-fit: cover;
+}
+
+.vigilancia-mom3-3-carousel-control {
+    background-color: rgba(0, 0, 0, 0.2);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.vigilancia-mom3-3-accordion {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.vigilancia-mom3-3-accordion-item {
+    border: none;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.vigilancia-mom3-3-accordion-header {
+    background-color: #f8f9fa;
+}
+
+.vigilancia-mom3-3-accordion-button {
+    background-color: #f8f9fa;
+    font-weight: 500;
+    padding: 15px 0px 15px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 98%;
+    text-align: left;
+}
+
+.accordion-text {
+    flex-grow: 1;
+}
+
+.vigilancia-mom3-3-accordion-button:not(.collapsed) {
+    background-color: #e9ecef;
+    color: #6e3cd2;
+}
+
+.vigilancia-mom3-3-accordion-button:focus {
+    box-shadow: none;
+    border-color: rgba(0, 0, 0, 0.1);
+}
+
+.vigilancia-mom3-3-accordion-body {
+    padding: 20px;
+    background-color: white;
+}
+
+.vigilancia-content {
+    transition: all 0.3s ease;
+}
+
+.accordion-icon {
+    margin-left: 10px;
+    transition: transform 0.3s ease;
+}
+
+.accordion-button:not(.collapsed) .accordion-icon {
+    transform: rotate(180deg);
+}
+
+@media (max-width: 992px) {
+    .vigilancia-mom3-3-img {
+        height: 300px;
+    }
+}
+
+@media (max-width: 768px) {
+    .vigilancia-mom3-3-img {
+        height: 250px;
+    }
+
+    .vigilancia-mom3-3-btn {
+        padding: 8px 15px;
+        font-size: 14px;
+    }
+}
+
+.sf-btn.sf-btn-purple.active {
+    background: #fff;
+    color: #6e3cd2;
+    box-shadow: 0 0 0 2px rgba(111, 66, 193, 0.5);
+}
+
+.carousel-item {
+    background-color: transparent;
+}
+
+.mrgin {
+    margin: 0 30px;
+}
+
+/* Solo para móvil - pone botones en fila */
+@media (max-width: 767.98px) {
+    .sf-buttons-row-mobile {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .sf-buttons-row-mobile .mrgin {
+        margin: 0 !important;
+        flex: 1;
+        min-width: calc(50% - 4px);
+    }
+
+    .sf-buttons-row-mobile .mt-2.mt-md-0 {
+        margin-top: 0 !important;
+    }
+}
+
+/* Estilos para los iconos de flecha en el carrusel */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    opacity: 1.5;
+}
+
+.carousel-control-prev-icon i,
+.carousel-control-next-icon i {
+    font-size: inherit;
+}
