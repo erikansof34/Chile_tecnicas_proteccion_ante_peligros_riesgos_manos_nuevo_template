@@ -11,15 +11,15 @@
 }
 
 #darkStyleImgSeccion:has(.dividerImgSeccion1) {
-    background: url(../../assets/img/fondos/momento_1.webp);
+    background: url(../../assets/img/fondos/momento1-tematica.webp);
 }
 
 #darkStyleImgSeccion:has(.dividerImgSeccion2) {
-    background: url(../../assets/img/fondos/momento_2.webp);
+    background: url(../../assets/img/fondos/momento2-tematica.webp);
 }
 
 #darkStyleImgSeccion:has(.dividerImgSeccion3) {
-    background: url(../../assets/img/fondos/momento_3.webp);
+    background: url(../../assets/img/fondos/momento3-tematica.webp);
 }
 
 #darkStyleImgSeccion:has(.dividerImg)::after {
@@ -47,7 +47,7 @@
     }
 
     #darkStyleImgSeccion:has(.dividerImgSeccion1) {
-        background: url(../../assets/img/fondos/momento1_mobie.webp);
+        background: url(../../assets/img/fondos/momento1_mobile.webp);
     }
 
     /*Seccion 2*/
