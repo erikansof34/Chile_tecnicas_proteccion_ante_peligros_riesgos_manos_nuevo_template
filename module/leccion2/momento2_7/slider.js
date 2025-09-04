@@ -81,12 +81,6 @@ export function init() {
       opcionSeleccionada.classList.add('true');
     } else {
       opcionSeleccionada.classList.add('false');
-
-      // Mostrar la respuesta correcta
-      const opcionCorrecta = preguntaElement.querySelector(`.opcion-respuesta[data-letra="${respuestasCorrectas[numeroPregunta]}"]`);
-      if (opcionCorrecta) {
-        opcionCorrecta.classList.add('true');
-      }
     }
 
     // Ocultar botón validar

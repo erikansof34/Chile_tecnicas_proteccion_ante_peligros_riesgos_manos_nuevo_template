@@ -3,7 +3,7 @@ const CURSO_CONFIG = {
   // Configuración de lecciones del curso
   lecciones: {
     leccion1: {
-      nombre: '1° Fundamentos y Marco Normativo',
+      nombre: '1° Identifiquemos Técnicas de protección ante peligros y riesgos para las manos, en contextos laborales',
       sliders: [
         { router: 'momento1_1', momento: 1 },
         { router: 'momento1_2', momento: 1 },
@@ -21,7 +21,7 @@ const CURSO_CONFIG = {
       }
     },
     leccion2: {
-      nombre: '2° Identificación, Evaluación y Control de Riesgos',
+      nombre: '2° Promover el correcto uso de los EPP, para la protección de las manos',
       sliders: [
         { router: 'momento2_1', momento: 2 },
         { router: 'momento2_2', momento: 2 },
@@ -38,7 +38,7 @@ const CURSO_CONFIG = {
       }
     },
     leccion3: {
-      nombre: '3° Vigilancia y Mejora Continua',
+      nombre: '3° Gestionar protocolos de primeros auxilios y evaluación de incidentes',
       sliders: [
         { router: 'momento3_1', momento: 3 },
         { router: 'momento3_2', momento: 3 },

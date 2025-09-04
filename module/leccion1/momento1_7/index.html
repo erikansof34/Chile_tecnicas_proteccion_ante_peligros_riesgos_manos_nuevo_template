@@ -32,5 +32,49 @@
       Ayuda a Andy a relacionar cada término con su significado correspondiente
       <i class="icon-inline icon-inline--start fa-solid fa-arrow-turn-down"></i>
     </i>
+    <!-- actividad -->
+    <div class="drag-drop-container">
+      <div class="card-container">
+        <div class="card" id="card1">
+          <img src="../../assets/img/btn_validacion/checkAct.png" class="validation-icon check-icon" alt="Correcto"
+            style="display: none;">
+          <img src="../../assets/img/btn_validacion/xmarkAct.png" class="validation-icon xmark-icon" alt="Incorrecto"
+            style="display: none;">
+          <p>Exposición a posibles descargas eléctricas en contacto con cables o equipos defectuosos.</p>
+          <div class="drop-zone desktop-drop-zone" id="dropZone1">Arrastre aquí</div>
+          <select class="mobile-select" id="mobileSelect1" style="display: none;">
+            <option value="">Seleccione una opción...</option>
+            <option value="Riesgos eléctricos">Riesgos eléctricos</option>
+            <option value="Descargas eléctricas">Descargas eléctricas</option>
+          </select>
+        </div>
+        <div class="card" id="card2">
+          <img src="../../assets/img/btn_validacion/checkAct.png" class="validation-icon check-icon" alt="Correcto"
+            style="display: none;">
+          <img src="../../assets/img/btn_validacion/xmarkAct.png" class="validation-icon xmark-icon" alt="Incorrecto"
+            style="display: none;">
+          <p>Un trabajador que al manipular cables o herramientas eléctricas sin las precauciones adecuadas puede
+            resultar en descargas eléctricas que causan quemaduras o lesiones graves en las manos.</p>
+          <div class="drop-zone desktop-drop-zone" id="dropZone2">Arrastre aquí</div>
+          <select class="mobile-select" id="mobileSelect2" style="display: none;">
+            <option value="">Seleccione una opción...</option>
+            <option value="Riesgos eléctricos">Riesgos eléctricos</option>
+            <option value="Descargas eléctricas">Descargas eléctricas</option>
+          </select>
+        </div>
+      </div>
 
+      <div class="drag-items desktop-drag-items">
+        <div class="drag-item" draggable="true" data-value="Riesgos eléctricos">Riesgos eléctricos</div>
+        <div class="drag-item" draggable="true" data-value="Descargas eléctricas">Descargas eléctricas</div>
+      </div>
+
+      <div class="feedback-message"></div>
+
+      <div class="action-buttons">
+        <button class="sf-btn sf-btn-purple btn-validate" disabled>Validar</button>
+        <button class="sf-btn sf-btn-purple btn-reset" disabled>Reiniciar</button>
+      </div>
+    </div>
+  </div>
 </section>
