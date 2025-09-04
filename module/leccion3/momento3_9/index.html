@@ -1,58 +1,75 @@
-<section class="row  h-100">
-    <div class="animate__animated animate__fadeInLeftBig col-12 sf-bg-dark sf-ct-col">
+<section class="row h-100">
+    <!-- Columna izquierda (VIDEO) -->
+    <div class="animate__animated animate__fadeInLeftBig col-lg-6 col-md-12 sf-bg-dark sf-cl-row text-white">
+        <h1 class="fw-bold text-center">¡¡Démosle una mano!!<br /><span class="sf-text-purple">6. Seguimiento y
+                reincorporación laboral</span></h1>
         <img src="../../assets/img/avatars/avatar_hombre_mirando_lista_fondo_azul.webp" alt="avatar"
-            class="sf-img-xl-10 mx-auto d-none d-xl-block">
-        <div class="ms-xl-4 mx-xl-0">
-            <h1 class="sf-text-white text-center">Elementos de protección personal (EPP)
-            </h1>
-            <img src="../../assets/img/avatars/avatar_hombre_mirando_lista_fondo_azul.webp" alt="avatar"
-                class="sf-img-80 sf-img-sm-60 sf-img-md-40 sf-img-lg-30 mx-auto d-xl-none mb-2">
-            <p class="sf-text-white text-justify">
-                Los <strong>elementos de protección personal (EPP)</strong> son dispositivos diseñados para proteger al
-                trabajador de
-                <strong>riesgos laborales.</strong>
-                En Chile, su calidad debe ser <strong>certificada,</strong> ya sea por entidades autorizadas por el
-                <strong>Instituto de
-                    Salud
-                    Pública</strong> o, en su
-                defecto, mediante <strong>certificaciones válidas</strong> del extranjero.
-            </p>
-        </div>
+            class="sf-img-80 sf-img-sm-60 sf-img-md-40 sf-img-lg-30 sf-img-xl-40 mx-auto" />
+        <p class="text-justify px-3 text-white">
+            De acuerdo con la Ley 16.744 - Seguro de Accidentes del Trabajo y Enfermedades Profesionales, se establecen
+            algunos
+            lineamientos para la reincorporación laboral del trabajador luego del accidente:
+        </p>
+        <button class="sf-btn sf-btn-purple" data-bs-toggle="modal" data-bs-target="#momento3-9_beneficios">
+            <i class="fa fa-question-circle"></i> Beneficios
+        </button>
     </div>
 
-    <div
-        class="animate__animated animate__fadeInRightBig col-md-12 px-5 pt-4 px-0 pb-1 pb-mt-0 d-flex justify-content-center align-items-center">
-        <div class="my-4 my-lg-0 text-center">
-            <i class="hipt hipt-light mb-3">
-                Arma la imagen arrastando cada parte a su lugar y recuerda los EPP que te protegen de una lesión:
-                <i class="icon-inline icon-inline--start fa-solid fa-arrow-turn-down"></i>
-            </i>
-            <div class="row animate__animated animate__backInUp animate__delay-1s">
-                <div class="iframe-container h-100" id="Slide3-9WebActivity">
-                    <div class="loader spinner-pulse"></div>
-                </div>
-            </div>
-            <div class="col-lg-12 col-md-12 mb-20 p-0 d-flex justify-content-center py-3 py-lg-0 pb-3">
-                <button class="sf-btn sf-btn-purple" data-bs-toggle="modal" data-bs-target="#momento3-9_sabias_que">
-                    <i class="fa fa-question-circle"></i> ¿Sabías qué?
-                </button>
+    <!-- Columna derecha con actividad -->
+    <div class="animate__animated animate__fadeInRightBig col-lg-6 col-md-12 sf-cr-row">
+        <i class="hipt hipt-light mb-3">
+            Haz clic en cada botón y escucha su respectivo audio
+            <i class="icon-inline icon-inline--start fa-solid fa-arrow-turn-down ms-2"></i>
+        </i>
+        <!-- Contenedor de la imagen con botones numerados -->
+        <div class="animate__animated animate__backInDown animate__delay-1s image-container-mom3-9"
+            id="imageContainer-mom3-9">
+            <img src="./momento3_9/img/manos_colores_levantadas_sldm3.webp" alt="Imagen descriptiva" class="img-mom3-9">
+
+            <!-- Botones numerados posicionados sobre la imagen -->
+            <button class="circle-button-mom3-9 active" id="button1-mom3-9" style="top: 12%; left: 20%;"
+                data-id="1">1</button>
+            <button class="circle-button-mom3-9" id="button2-mom3-9" style="top: 12%; left: 40%;" data-id="2">2</button>
+            <button class="circle-button-mom3-9" id="button3-mom3-9" style="top: 25%; left: 49%;" data-id="3">3</button>
+            <button class="circle-button-mom3-9" id="button4-mom3-9" style="top: 12%; left: 65%;" data-id="4">4</button>
+
+            <!-- Contenedor de información debajo de la imagen -->
+            <div class="info-container-mom3-9" id="infoContainer-mom3-9">
+                <p id="info-text-mom3-9">
+                    <strong>1. Asegurar el área:</strong><br> Demarcar el espacio para evitar interferencias.
+                </p>
             </div>
         </div>
+
     </div>
 </section>
 
 <!-- Modal -->
-<div class="modal fade" id="momento3-9_sabias_que" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-lgancho">
+<div class="modal fade" id="momento3-9_beneficios" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">¿Sabías qué?</h5>
+                <h5 class="modal-title">Beneficios</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"><i
                         class="fa fa-times"></i></button>
             </div>
             <div class="modal-body">
-                <img src="../../assets/img/momento3_9/info_epp.webp" alt="" class="mx-auto img-w">
-                <img src="../../assets/img/momento3_9/info_epp_mobile.webp" alt="" class="img-m">
+                <img src="../../assets/img/botones/recuerda_icono.webp" alt="" class="sf-img-30 mx-auto">
+                <p class="text-justify">
+                    La reincorporación segura al trabajo tiene múltiples beneficios:
+                <ul>
+                    <li>Mejora la calidad de vida de los trabajadores: Al permitir que los trabajadores recuperen su
+                        independencia y autonomía.</li>
+                    <li>Reduce los costos para las empresas: Al disminuir el ausentismo laboral y los costos asociados a
+                        los accidentes de
+                        trabajo.</li>
+                    <li>Contribuye a la seguridad y salud en el trabajo: Al identificar y corregir los factores de
+                        riesgo que pueden causar
+                        nuevas lesiones.</li>
+
+                </ul>
+                </p>
+
             </div>
         </div>
     </div>

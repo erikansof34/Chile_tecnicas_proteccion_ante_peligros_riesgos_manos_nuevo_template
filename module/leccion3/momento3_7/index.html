@@ -1,82 +1,72 @@
 <section class="row h-100">
-    <!-- Columna izquierda -->
-    <div class="animate__animated animate__fadeInLeftBig sf-bg-dark col-lg-6 col-md-12 sf-cl-row">
-
-        <h1 class="sf-txt-xl sf-txt-1xl-lg sf-text-white">Planificación ante <br> <span
-                class="sf-text-purple">emergencias y simulacros</span></h1>
+    <div class="animate__animated animate__fadeInLeftBig col-lg-5 col-md-12 sf-bg-dark sf-cl-row">
+        <h1 class="sf-text-white text-center">¡¡Levantemos la mano!!
+            <br><span class="sf-text-purple">5. Investigación interna y medidas correctivas</span>
+        </h1>
         <img src="../../assets/img/avatars/avatar_mujer_mirando_de frente_con_cuaderno_fondo_azul.webp" alt="avatar"
             class="sf-img-80 sf-img-sm-60 sf-img-md-40 sf-img-lg-30 sf-img-xl-40 mx-auto">
+        <i class="hipt hipt-light mb-3">
+            Investiguemos…
+            <i class="icon-inline icon-inline--start fa-solid fa-arrow-turn-down ms-2"></i>
+        </i>
         <p class="sf-text-white text-justify">
-            En Chile, la planificación ante emergencias laborales es una <strong>obligación legal</strong> que busca
-            <strong>preparar a
-                empleadores</strong> y
-            <strong>trabajadores</strong> frente a situaciones como sismos, incendios o fugas, accidentes de trabajo,
-            etc.
-            Los <strong>simulacros</strong> permiten <strong>entrenar y mejorar</strong> la respuesta, fortaleciendo la
-            prevención y protección de la <strong>vida
-                en el
-                trabajo.</strong>
+            La mutualidad debe determinar la gravedad del accidente, y si es de <span class="sf-txt-800">origen laboral
+                o no.</span>
         </p>
-
+        <button class="sf-btn sf-btn-purple" data-bs-toggle="modal" data-bs-target="#momento3-7_abre_la_mano">
+            <i class="fa-solid fa-paperclip"></i> Abre la mano
+        </button>
     </div>
+    <div class="animate__animated animate__fadeInRightBig col-lg-7 col-md-12 sf-cr-row">
+        <i class="hipt hipt-light mb-3">
+            Selecciona la opción correcta
+            <i class="icon-inline icon-inline--start fa-solid fa-arrow-turn-down ms-2"></i>
+        </i>
 
-    <!-- Columna derecha con tarjetas -->
-    <div class="animate__animated animate__fadeInRightBig col-lg-6 col-md-12 sf-cr-row">
+        <!-- Actividad de selección -->
+        <div class="quiz-containerALD">
+            <div class="items-grid" id="items-grid">
+                <!-- Los elementos se generarán dinámicamente con JS -->
+            </div>
 
-        <div class="d-flex flex-column align-items-center m-4">
-            <i class="hipt hipt-light">
-                Haz clic sobre los botones para leer su respectiva definición <i
-                    class="icon-inline icon-inline--start fa-solid fa-arrow-turn-down"></i>
-            </i>
-        </div>
-
-        <!-- Contenedor de la imagen con botones numerados -->
-        <div class="animate__animated animate__backInDown animate__delay-1s image-container-mom3-11"
-            id="imageContainer-mom3-11">
-            <img src="../../assets/img/momento3_7/planificacion_ante_emergencias.webp" alt="Imagen descriptiva"
-                class="img-mom3-11">
-
-            <!-- Botones numerados posicionados sobre la imagen -->
-            <button class="circle-button-mom3-11 active" id="button1-mom3-11" style="top: 25%; left: 12%;"
-                data-id="1">1</button>
-            <button class="circle-button-mom3-11" id="button2-mom3-11" style="top: 5%; left: 26%;"
-                data-id="2">2</button>
-            <button class="circle-button-mom3-11" id="button3-mom3-11" style="top: 25%; left: 30%;"
-                data-id="3">3</button>
-            <button class="circle-button-mom3-11" id="button4-mom3-11" style="top: 35%; left: 42%;"
-                data-id="4">4</button>
-            <button class="circle-button-mom3-11" id="button5-mom3-11" style="top: 45%; left: 56%;"
-                data-id="5">5</button>
-            <button class="circle-button-mom3-11" id="button6-mom3-11" style="top: 35%; left: 70%;"
-                data-id="6">6</button>
-
-            <!-- Contenedor de información debajo de la imagen -->
-            <div class="info-container-mom3-11" id="infoContainer-mom3-11">
-                <p id="info-text-mom3-11">
-                    <strong>1. Asegurar el área:</strong><br> Demarcar el espacio para evitar interferencias.
+            <div class="mt-4">
+                <p id="error-message" class="text-secondary-color text-center text-md font-bold" style="display: none;">
                 </p>
+                <p id="score-text" class="text-md font-bold text-paragraph-light-color" style="display: none;"></p>
+                <div class="button-container">
+                    <button id="validate-btn" class="sf-btn sf-btn-purple">
+                        <i class="fa-solid fa-check"></i> Validar
+                    </button>
+                    <button id="reset-btn" class="sf-btn sf-btn-secondary" disabled>
+                        <i class="fa-solid fa-repeat"></i> Reiniciar
+                    </button>
+                </div>
             </div>
         </div>
-
     </div>
 </section>
 
 <!-- Modal -->
-<div class="modal fade" id="sld11_sabiasque" tabindex="-1" aria-hidden="true">
+<div class="modal fade" id="momento3-7_abre_la_mano" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">Recuerda</h5>
+                <h5 class="modal-title">Abre la mano</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"><i
                         class="fa fa-times"></i></button>
             </div>
             <div class="modal-body">
-                <img src="../../assets/img/botones/sabias_que.png" alt="" class="mx-auto">
+                <img src="../../assets/img/botones/recuerda_icono.webp" alt="" class="sf-img-30 mx-auto">
                 <p class="text-justify">
-                    Los accidentes laborales no son producto del azar ni simples errores humanos: son el resultado de
-                    múltiples causas
-                    conectadas entre sí. La metodología del árbol de causas te ayuda a descubrirlos y prevenir futuros
-                    incidentes.
+                    Tiempos de reporte de los accidentes:
+                <ul>
+                    <li>Los accidentes deben ser reportados a la mutualidad dentro de las 24 horas de ocurrencia.</li>
+                    <li>La empresa debe iniciar la investigación dentro de las primeras 48 horas posteriores al
+                        accidente.</li>
+                    <li>La investigación debe completarse y documentarse en un informe dentro de 10 días hábiles después
+                        del accidente.</li>
+
+                </ul>
                 </p>
             </div>
         </div>

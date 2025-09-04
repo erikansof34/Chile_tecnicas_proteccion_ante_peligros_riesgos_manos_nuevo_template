@@ -1,35 +1,236 @@
 <section class="row h-100">
-    <!-- Columna izquierda -->
-    <div class="animate__animated animate__fadeInLeftBig sf-bg-dark col-lg-5 col-md-12 sf-cl-row">
-        <h1 class="sf-txt-xl sf-txt-1xl-lg sf-text-white">Procedimientos de <br> <span class="sf-text-purple">Trabajo
-                Seguro (PTS)</span></h1>
-        <img src="../../assets/img/avatars/avatar_mujer_mirando_de frente_cuaderno_bajo_el_brazo_fondo_azul.webp"
-            alt="avatar" class="sf-img-80 sf-img-sm-60 sf-img-md-40 sf-img-lg-30 sf-img-xl-60 mx-auto">
-        <p class="sf-text-white text-justify">
-            Los <strong>PTS</strong> son un conjunto de <strong>normas de seguridad</strong> que indican cómo realizar
-            <strong>tareas laborales</strong> de forma
-            segura, minimizando
-            <strong>riesgos de accidentes</strong> y <strong>enfermedades.</strong> Incluyen: <strong>Acciones a seguir,
-                herramientas</strong> y <strong>EPP</strong> necesarios y
-            condiciones de
-            seguridad requeridas.
+    <!-- Columna izquierda (VIDEO) -->
+    <div class="animate__animated animate__fadeInLeftBig col-lg-6 col-md-12 sf-bg-dark sf-cl-row text-white">
+        <h1 class="fw-bold text-center">¡¡Manos a la obra!!<br /><span class="sf-text-purple">Apliquemos</span></h1>
+        <img src="../../assets/img/avatars/avatar_hombre_mirando_lista_fondo_azul.webp" alt="avatar"
+            class="sf-img-80 sf-img-sm-60 sf-img-md-40 sf-img-lg-30 sf-img-xl-40 mx-auto" />
+        <p class="text-justify px-3 text-white">
+            Andy quiere repasar lo aprendido con relación al manejo de lesiones y accidentes de manos.
+            Ayúdale a contestar las preguntas con las opciones de Falso / Verdadero.
         </p>
     </div>
 
-    <!-- Columna derecha con tarjetas -->
-    <div class="animate__animated animate__fadeInRightBig col-lg-7 col-md-12 sf-crp-row">
-        <div class="my-4 my-lg-4 text-center m-4">
-            <div class="d-flex flex-column align-items-center">
-                <i class="hipt hipt-light">
-                    Haz clic en cada tarjeta para ver la información y reproducir su respectivo audio
-                    <i class="icon-inline icon-inline--start fa-solid fa-arrow-turn-down"></i>
-                </i>
+    <!-- Columna derecha con actividad -->
+    <div class="animate__animated animate__fadeInRightBig col-lg-6 col-md-12 sf-cr-row">
+        <i class="hipt hipt-light mb-3">
+            Selecciona Verdadero o Falso según corresponda el caso
+            <i class="icon-inline icon-inline--start fa-solid fa-arrow-turn-down ms-2"></i>
+        </i>
+        <div class="animate__animated animate__zoomIn animate__delay-1s mx-lg-0" id="preguntas-container">
+            <div>
+                <div id="contador-preguntas" class=" text-center">
+                    <p id="progress-text">0 de 6 preguntas validadas</p>
+                </div>
+                <div class="progress-bar-container">
+                    <div class="progress-bar-fill" id="progress-bar-fill"></div>
+                </div>
             </div>
 
-            <div class="animate__animated animate__fadeInTopRight animate__delay-1s row g-2 justify-content-center mt-3"
-                id="sfCardsContainerMom3Sld10">
-                <!-- Aquí se insertarán las tarjetas -->
+            <!-- Contenedor de preguntas -->
+            <!-- Pregunta 1 -->
+            <div class="preguntas_01" data-pregunta="1">
+                <div class="ctItem fixed-size-question-box">
+                    <p class="text-paragraph-light-color text-p-size text-left"
+                        style="font-family: Montserrat, sans-serif;">
+                        <strong>Pregunta 1: </strong>Es deber del conductor reportar los accidentes de tránsito en los
+                        que este
+                        involucrado?
+                    </p>
+                    <div class="opciones-pregunta">
+                        <p class="opcion-respuesta" data-valor="true">A. Verdadero</p>
+                        <p class="opcion-respuesta" data-valor="false">B. Falso</p>
+                    </div>
+
+                    <!-- Botón Validar -->
+                    <div class="d-flex justify-center">
+                        <button class="sf-btn sf-btn-purple btn-validar" data-pregunta="1">
+                            <i class="fas fa-check-circle"></i> Validar
+                        </button>
+                    </div>
+
+                    <!-- Botón Continuar -->
+                    <div class="d-flex justify-center d-none btn-siguiente-container">
+                        <button class="sf-btn sf-btn-purple d-none" data-siguiente="2">
+                            <i class="fa-solid fa-circle-arrow-right"></i> Continuar
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Feedback para pregunta 1 -->
+                <div class="d-flex justify-content-center">
+                    <div id="mensaje_error_1" class="mt-3 d-none"></div>
+                    <div id="resultado_alertas_1" class="mt-3 d-none"></div>
+                </div>
             </div>
+
+            <!-- Pregunta 2 -->
+            <div class="preguntas_01 d-none" data-pregunta="2">
+                <div class="ctItem fixed-size-question-box">
+                    <p class="text-paragraph-light-color text-p-size text-left"
+                        style="font-family: Montserrat, sans-serif;">
+                        <strong>Pregunta 2: </strong>Respetar los límites de velocidad es opcional?
+                    </p>
+                    <div class="opciones-pregunta">
+                        <p class="opcion-respuesta" data-valor="true">A. Verdadero</p>
+                        <p class="opcion-respuesta" data-valor="false">B. Falso</p>
+                    </div>
+
+                    <!-- Botón Validar -->
+                    <div class="d-flex justify-center">
+                        <button class="sf-btn sf-btn-purple btn-validar" data-pregunta="2">
+                            <i class="fas fa-check-circle"></i> Validar
+                        </button>
+                    </div>
+
+                    <!-- Botón Continuar -->
+                    <div class="d-flex justify-center d-none btn-siguiente-container">
+                        <button class="sf-btn sf-btn-purple d-none" data-siguiente="3">
+                            Continuar
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Feedback para pregunta 2 -->
+                <div class="d-flex justify-content-center">
+                    <div id="mensaje_error_2" class="mt-3 d-none"></div>
+                    <div id="resultado_alertas_2" class="mt-3 d-none"></div>
+                </div>
+            </div>
+
+            <!-- Pregunta 3 -->
+            <div class="preguntas_01 d-none" data-pregunta="3">
+                <div class="ctItem fixed-size-question-box">
+                    <p class="text-paragraph-light-color text-p-size text-left"
+                        style="font-family: Montserrat, sans-serif;">
+                        <strong>Pregunta 3: </strong>¿Si se siente cansado o enfermo es mejor no conducir?
+                    </p>
+                    <div class="opciones-pregunta">
+                        <p class="opcion-respuesta" data-valor="true">A. Verdadero</p>
+                        <p class="opcion-respuesta" data-valor="false">B. Falso</p>
+                    </div>
+
+                    <!-- Botón Validar -->
+                    <div class="d-flex justify-center">
+                        <button class="sf-btn sf-btn-purple btn-validar" data-pregunta="3">
+                            <i class="fas fa-check-circle"></i> Validar
+                        </button>
+                    </div>
+
+                    <!-- Botón Continuar -->
+                    <div class="d-flex justify-center d-none btn-siguiente-container">
+                        <button class="sf-btn sf-btn-purple d-none" data-siguiente="4">
+                            Continuar
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Feedback para pregunta 3 -->
+                <div class="d-flex justify-content-center">
+                    <div id="mensaje_error_3" class="mt-3 d-none"></div>
+                    <div id="resultado_alertas_3" class="mt-3 d-none"></div>
+                </div>
+            </div>
+
+            <!-- Pregunta 4 -->
+            <div class="preguntas_01 d-none" data-pregunta="4">
+                <div class="ctItem fixed-size-question-box">
+                    <p class="text-paragraph-light-color text-p-size text-left"
+                        style="font-family: Montserrat, sans-serif;">
+                        <strong>Pregunta 4: </strong>¿Acosar a otros conductores, o no respetar las distancia mínimas,
+                        son
+                        formas de
+                        conducción temeraria?
+                    </p>
+                    <div class="opciones-pregunta">
+                        <p class="opcion-respuesta" data-valor="true">A. Verdadero</p>
+                        <p class="opcion-respuesta" data-valor="false">B. Falso</p>
+                    </div>
+
+                    <!-- Botón Validar -->
+                    <div class="d-flex justify-center">
+                        <button class="sf-btn sf-btn-purple btn-validar" data-pregunta="4">
+                            <i class="fas fa-check-circle"></i> Validar
+                        </button>
+                    </div>
+
+                    <!-- Botón Continuar -->
+                    <div class="d-flex justify-center d-none btn-siguiente-container">
+                        <button class="sf-btn sf-btn-purple d-none" data-siguiente="5">
+                            Continuar
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Feedback para pregunta 4 -->
+                <div class="d-flex justify-content-center">
+                    <div id="mensaje_error_4" class="mt-3 d-none"></div>
+                    <div id="resultado_alertas_4" class="mt-3 d-none"></div>
+                </div>
+            </div>
+
+            <!-- Pregunta 5 -->
+            <div class="preguntas_01 d-none" data-pregunta="5">
+                <div class="ctItem fixed-size-question-box">
+                    <p class="text-paragraph-light-color text-p-size text-left"
+                        style="font-family: Montserrat, sans-serif;">
+                        <strong>Pregunta 5: </strong>Se recomienda usar el cinturón de seguridad sólo cuando la
+                        autoridad está
+                        cerca?
+                    </p>
+                    <div class="opciones-pregunta">
+                        <p class="opcion-respuesta" data-valor="true">A. Verdadero</p>
+                        <p class="opcion-respuesta" data-valor="false">B. Falso</p>
+                    </div>
+
+                    <!-- Botón Validar -->
+                    <div class="d-flex justify-center">
+                        <button class="sf-btn sf-btn-purple btn-validar" data-pregunta="5">
+                            <i class="fas fa-check-circle"></i> Validar
+                        </button>
+                    </div>
+
+                    <!-- Botón Continuar -->
+                    <div class="d-flex justify-center d-none btn-siguiente-container">
+                        <button class="sf-btn sf-btn-purple d-none" data-siguiente="6">
+                            Continuar
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Feedback para pregunta 5 -->
+                <div class="d-flex justify-content-center">
+                    <div id="mensaje_error_5" class="mt-3 d-none"></div>
+                    <div id="resultado_alertas_5" class="mt-3 d-none"></div>
+                </div>
+            </div>
+
+            <!-- Navegación externa para cuando el quiz esté completado -->
+            <div id="navegacion-resumen" class="d-none">
+                <div class="d-flex justify-content-between align-items-center flex-wrap gap-2">
+                    <button id="btnAnteriorNav" class="sf-btn sf-btn-outline-purple">
+                        <i class="fa-solid fa-chevron-left"></i> Anterior
+                    </button>
+                    <span class="quiz-counter">
+                        <span id="preguntaActualNav">1</span> de <span id="totalPreguntasNav">5</span>
+                    </span>
+                    <button id="btnSiguienteNav" class="sf-btn sf-btn-outline-purple">
+                        Siguiente <i class="fa-solid fa-chevron-right"></i>
+                    </button>
+                </div>
+
+                <div class="text-center">
+                    <button class="btn sf-btn sf-btn-purple btn-reiniciar">
+                        <i class="fas fa-redo me-2"></i>Reiniciar
+                    </button>
+                </div>
+            </div>
+
+            <!-- Feedback final externo -->
+            <div id="feedback-final-externo" class="d-none">
+            </div>
+
+            <!-- Div para resultado final -->
+            <div id="resultado_final" class="d-none"></div>
         </div>
     </div>
 </section>

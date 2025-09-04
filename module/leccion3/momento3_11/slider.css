@@ -1,165 +1,87 @@
-/* CSS para los tooltips reformulados */
-.contenido-tooltips-mom3-11 {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    max-width: 100%;
-    margin: 0 auto;
-    gap: 20px;
-    position: relative;
-    transition: all 0.4s ease;
-}
-
-.imagen-botones-tooltips-mom3-11 {
-    position: relative;
+/* Estilos específicos del acordeón */
+.accordion-wrapper {
     width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: all 0.4s ease;
 }
 
-.imagen-botones-tooltips-mom3-11.contraido {
-    width: 45%;
-}
-
-.img-tooltips-mom3-11 {
-    width: 100%;
-    max-width: 20rem;
-    height: auto;
-    object-fit: contain;
-    transition: all 0.4s ease;
-}
-
-.boton-tooltips-mom3-11 {
-    position: absolute;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    color: white;
-    font-size: 18px;
-    font-weight: bold;
-    border: 2px solid white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: all 0.3s;
-    background-color: #6e3cd2;
-    z-index: 10;
-}
-
-.boton-tooltips-mom3-11:hover {
-    transform: scale(1.2);
-    background-color: #8d61e6;
-}
-
-.tarjetas-tooltips-mom3-11 {
-    width: 0;
-    opacity: 0;
+.accordion {
+    border-radius: 8px;
     overflow: hidden;
+}
+
+.accordion-item {
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.accordion-header {
+    font-family: 'Montserrat';
+    background-color: #04395ecc;
+    color: white;
+    padding: 15px 20px;
+    cursor: pointer;
+    font-weight: 600;
     display: flex;
-    flex-direction: column;
-    gap: 15px;
-    transition: all 0.4s ease;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s ease;
 }
 
-.tarjetas-tooltips-mom3-11.mostrado {
-    width: 50%;
-    opacity: 1;
-    padding-left: 15px;
+.accordion-header:hover {
+    background-color: #04325a;
 }
 
-.card-tooltips-mom3-11 {
-    display: none;
-    background: #6e3cd2;
-    color: white;
-    padding: 15px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    animation: fadeIn 0.5s ease-out;
+.accordion-header::after {
+    content: '\f078';
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    transition: transform 0.3s ease;
 }
 
-.card-tooltips-mom3-11.mostrado {
-    display: block;
+.accordion-item.active .accordion-header::after {
+    transform: rotate(180deg);
 }
 
-.card-tooltips-mom3-11 p {
-    margin-bottom: 0;
-    font-size: 16px;
-    line-height: 1.4;
-    color: white;
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+    background-color: white;
+    color: black;
 }
 
-/* Posiciones de los botones */
-.boton-1-tooltips {
-    top: 15%;
-    left: 45%;
+.accordion-item.active .accordion-content {
+    max-height: 500px;
+    padding: 15px 20px;
 }
 
-.boton-2-tooltips {
-    top: 65%;
-    left: 45%;
+.listado {
+    padding-left: 20px;
+    margin: 0;
 }
 
-.boton-3-tooltips {
-    top: 90%;
-    left: 60%;
+.listado li {
+    margin-bottom: 10px;
+    line-height: 1.5;
 }
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateX(20px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
+/* Responsive */
 @media (max-width: 992px) {
-    .contenido-tooltips-mom3-11 {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .imagen-botones-tooltips-mom3-11.contraido {
-        width: 100%;
-    }
-
-    .tarjetas-tooltips-mom3-11.mostrado {
-        width: 100%;
-        padding-left: 0;
-        margin-top: 20px;
-    }
-
-    .img-tooltips-mom3-11 {
-        max-width: 100%;
+    .sf-img-80 {
+        max-width: 60%;
     }
 }
 
 @media (max-width: 768px) {
-    .boton-tooltips-mom3-11 {
-        width: 35px;
-        height: 35px;
-        font-size: 16px;
+    .row {
+        flex-direction: column;
     }
 
-    /* Ajustar posiciones para móvil */
-    .boton-1-tooltips {
-        top: 15%;
-        left: 50%;
+    .sf-cl-row,
+    .sf-cr-row {
+        padding: 20px;
     }
 
-    .boton-2-tooltips {
-        top: 65%;
-        left: 50%;
-    }
-
-    .boton-3-tooltips {
-        top: 90%;
-        left: 60%;
+    .sf-img-80 {
+        max-width: 50%;
     }
 }

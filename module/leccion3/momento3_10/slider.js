@@ -1,132 +1,452 @@
 export function init() {
-    const sfCardData = [
-        {
-            icon: "fa-user-tie",
-            title: "Responsabilidades",
-            description: "Ej: Supervisores, operadores, equipo de seguridad.",
-            audio: "responsabilidades-m3-ppt-36.mp3"
-        },
-        {
-            icon: "fa-clipboard-check",
-            title: "Condiciones previas",
-            description: "Ej: Permisos, inspecciones, análisis de riesgo.",
-            audio: "condiciones-previas-m3-ppt-36.mp3"
-        },
-        {
-            icon: "fa-hard-hat",
-            title: "Equipamiento",
-            description: "Ej: EPP, herramientas, equipos de medición.",
-            audio: "equipamiento-necesario-m3-ppt-36.mp3"
-        },
-        {
-            icon: "fa-list-check",
-            title: "Instrucciones",
-            description: "Ej: Pasos, secuencia, puntos críticos.",
-            audio: "instucciones-detalladas-m3-ppt-36.mp3"
-        },
-        {
-            icon: "fa-stamp",
-            title: "Revisión",
-            description: "Ej: Check-list, firmas, validaciones.",
-            audio: "revision-m3-ppt-36.mp3"
-        },
-        {
-            icon: "fa-chalkboard-teacher",
-            title: "Capacitación",
-            description: "Ej: Cursos, demostraciones, evaluaciones.",
-            audio: "capacitacion-a-trabajadores-m3-ppt-36.mp3"
-        },
-        {
-            icon: "fa-chart-line",
-            title: "Mejora continua",
-            description: "Ej: Feedback, actualizaciones, lecciones.",
-            audio: "mejora-continua-m3-ppt-36.mp3"
-        },
-        {
-            icon: "fa-flag-checkered",
-            title: "Conclusiones",
-            description: "Ej: Resumen, compromisos, cierre.",
-            audio: "conclusiones-m3-ppt-36.mp3"
+    // Variables para el manejo del cuestionario
+    let preguntaActual = 1;
+    let respuestasUsuario = {};
+    let resultados = {};
+    let quizCompletado = false;
+    let preguntaActualNav = 1;
+    let navHandlersAdded = false;
+
+    // Respuestas correctas para momento3_10 - 
+    const respuestasCorrectas = {
+        1: true, // Pregunta 1: 
+        2: false, // Pregunta 2: 
+        3: true, // Pregunta 3: 
+        4: true, // Pregunta 4: 
+        5: false, // Pregunta 5: 
+    };
+
+    // Contar dinámicamente el total de preguntas
+    const totalPreguntas = document.querySelectorAll('.preguntas_01[data-pregunta]').length;
+    let preguntasValidadas = 0;
+
+    // Actualiza el contador y la barra de progreso
+    function actualizarProgresoPreguntas() {
+        const progressText = document.getElementById('progress-text');
+        if (progressText) {
+            progressText.textContent = `${preguntasValidadas} de ${totalPreguntas} preguntas validadas`;
         }
-    ];
+        const barra = document.getElementById('progress-bar-fill');
+        if (barra) {
+            const porcentaje = (preguntasValidadas / totalPreguntas) * 100;
+            barra.style.width = porcentaje + '%';
+        }
+    }
 
-    const container = document.getElementById("sfCardsContainerMom3Sld10");
-    if (!container) return;
+    // Llama a esta función cada vez que el usuario valida una pregunta
+    function sumarPreguntaValidada() {
+        preguntasValidadas++;
+        actualizarProgresoPreguntas();
+    }
 
-    // Limpiar contenido anterior si existe
-    container.innerHTML = "";
+    function validarPregunta(numeroPregunta) {
+        const preguntaElement = document.querySelector(`[data-pregunta="${numeroPregunta}"]`);
+        const opcionSeleccionada = preguntaElement.querySelector('.opcion-respuesta.seleccionada_alertas');
 
-    // Renderizar las tarjetas
-    sfCardData.forEach((item, index) => {
-        const col = document.createElement("div");
+        const mensajeError = document.getElementById(`mensaje_error_${numeroPregunta}`);
+        const resultadoAlertas = document.getElementById(`resultado_alertas_${numeroPregunta}`);
+        const btnValidar = preguntaElement.querySelector('.btn-validar');
+        const btnSiguienteContainer = preguntaElement.querySelector('.btn-siguiente-container');
 
-        // Ajuste para las últimas 2 tarjetas (índices 6 y 7)
-        if (index === 6) { // Penúltima tarjeta
-            col.className = "col-6 col-md-4 ms-md-auto"; // Margen derecho automático
-        } else if (index === 7) { // Última tarjeta
-            col.className = "col-6 col-md-4 me-md-auto"; // Margen izquierdo automático
+        if (!opcionSeleccionada) {
+            // No hay opción seleccionada
+            mensajeError.classList.remove('d-none');
+            mensajeError.innerHTML = '<div class="alert multi-select-feedback-warning"><i class="fas fa-info-circle me-2"></i>Debes seleccionar una opción antes de validar.</div>';
+            resultadoAlertas.classList.add('d-none');
+            return;
+        }
+
+        // Ocultar mensaje de error
+        mensajeError.classList.add('d-none');
+
+        // Obtener la respuesta del usuario
+        const respuestaUsuario = opcionSeleccionada.getAttribute('data-valor') === 'true';
+        respuestasUsuario[numeroPregunta] = respuestaUsuario;
+
+        // Verificar si es correcta
+        const esCorrecta = respuestasUsuario[numeroPregunta] === respuestasCorrectas[numeroPregunta];
+        resultados[numeroPregunta] = esCorrecta;
+
+        // Solo sumar si no se ha contado antes
+        if (!preguntaElement.classList.contains('pregunta-validada')) {
+            preguntaElement.classList.add('pregunta-validada');
+            sumarPreguntaValidada();
+        }
+
+        // DESHABILITAR todas las opciones de esta pregunta
+        preguntaElement.querySelectorAll('.opcion-respuesta').forEach((opcion) => {
+            opcion.style.pointerEvents = 'none';
+            opcion.classList.remove('act');
+        });
+
+        // Aplicar color según resultado a la opción seleccionada
+        if (esCorrecta) {
+            opcionSeleccionada.classList.add('true');
         } else {
-            col.className = "col-6 col-md-4"; // Layout normal para las primeras 6
+            opcionSeleccionada.classList.add('false');
         }
 
-        col.innerHTML = `
-      <div class="card-mom3-10" data-audio="../../assets/momento3_10/audio/${item.audio}">
-        <div class="card-mom3-10-inner">
-          <div class="card-mom3-10-front">
-            <i class="fa-solid ${item.icon} fa-2x"></i>
-            <p class=" mt-2 text-white">${item.title}</p>
-          </div>
-          <div class="card-mom3-10-back">
-            <p class="mb-2 text-white">${item.description}</p>
-            <audio controls class="sf-audio-player">
-              <source src="../../assets/audio/momento3_10/${item.audio}" type="audio/mp3">
-            </audio>
+        // Ocultar botón validar
+        if (btnValidar) btnValidar.classList.add('d-none');
+
+        // Si es la ÚLTIMA pregunta
+        if (numeroPregunta === totalPreguntas) {
+            // Mostrar resumen completo inmediatamente
+            mostrarResumenFinal();
+        } else {
+            // Para preguntas NO finales: mostrar feedback individual + botón "Siguiente"
+            if (esCorrecta) {
+                resultadoAlertas.innerHTML = '<div class="alert multi-select-feedback-success"><i class="fas fa-check-circle me-2"></i>¡Correcto! Tu respuesta es acertada.</div>';
+            } else {
+                resultadoAlertas.innerHTML =
+                    '<div class="alert multi-select-feedback-error"><i class="fas fa-times-circle me-2"></i>Incorrecto. ¡Inténtalo de nuevo! La opción seleccionada no es la correcta.</div>';
+            }
+            resultadoAlertas.classList.remove('d-none');
+
+            // Mostrar botón "Siguiente"
+            if (btnSiguienteContainer) {
+                btnSiguienteContainer.classList.remove('d-none');
+                const btnSiguiente = btnSiguienteContainer.querySelector('button');
+                if (btnSiguiente) {
+                    btnSiguiente.classList.remove('d-none');
+                }
+            }
+        }
+    }
+
+    function mostrarPregunta(numeroPregunta) {
+        // Ocultar todas las preguntas
+        document.querySelectorAll('.preguntas_01').forEach((pregunta) => {
+            pregunta.classList.add('d-none');
+        });
+
+        // Mostrar la pregunta actual
+        const preguntaElement = document.querySelector(`[data-pregunta="${numeroPregunta}"]`);
+        if (preguntaElement) {
+            preguntaElement.classList.remove('d-none');
+
+            // Solo limpiar si NO está completado el quiz
+            if (!quizCompletado) {
+                // Limpiar selecciones previas y habilitar opciones
+                preguntaElement.querySelectorAll('.opcion-respuesta').forEach((opcion) => {
+                    opcion.classList.remove('seleccionada_alertas', 'act', 'true', 'false');
+                    opcion.style.pointerEvents = 'auto';
+                });
+
+                // Ocultar mensajes de feedback
+                const mensajeError = document.getElementById(`mensaje_error_${numeroPregunta}`);
+                const resultadoAlertas = document.getElementById(`resultado_alertas_${numeroPregunta}`);
+
+                if (mensajeError) mensajeError.classList.add('d-none');
+                if (resultadoAlertas) resultadoAlertas.classList.add('d-none');
+
+                // Mostrar botón validar y ocultar botón siguiente
+                const btnValidar = preguntaElement.querySelector('.btn-validar');
+                const btnSiguienteContainer = preguntaElement.querySelector('.btn-siguiente-container');
+
+                if (btnValidar) btnValidar.classList.remove('d-none');
+                if (btnSiguienteContainer) {
+                    btnSiguienteContainer.classList.add('d-none');
+                    const btnSiguiente = btnSiguienteContainer.querySelector('button');
+                    if (btnSiguiente) btnSiguiente.classList.add('d-none');
+                }
+            }
+        }
+    }
+
+    function mostrarResumenFinal() {
+        // Calcular resultados
+        const totalPreguntas = Object.keys(respuestasCorrectas).length;
+        const respuestasCorrectas_count = Object.values(resultados).filter((resultado) => resultado === true).length;
+        const porcentaje = Math.round((respuestasCorrectas_count / totalPreguntas) * 100);
+
+        let feedbackClass = porcentaje >= 75 ? 'multi-select-feedback-success' : porcentaje >= 50 ? 'multi-select-feedback-warning' : 'multi-select-feedback-error';
+
+        // Generar el detalle de cada pregunta
+        const correctnessByQuestion = [];
+        for (let i = 1; i <= totalPreguntas; i++) {
+            const ok = resultados[i];
+            correctnessByQuestion.push({ q: i, ok });
+        }
+
+        const items = correctnessByQuestion
+            .map(({ q, ok }) => {
+                const icon = ok ? '<i class="fa-solid fa-check ms-1" style="color:#fff"></i>' : '<i class="fa-solid fa-xmark ms-1" style="color:#fff"></i>';
+                const text = ok ? 'Has contestado correctamente' : 'Has contestado incorrectamente';
+                return `<li class="mb-1" style="color:#fff">Pregunta ${q}: ${text} ${icon}</li>`;
+            })
+            .join('');
+
+        // Integrar el resumen en contenedor externo (único lugar)
+        const feedbackExterno = document.getElementById('feedback-final-externo');
+        if (feedbackExterno) {
+            // Agregar el resumen al contenedor externo
+            const resumenHTML = `
+        <div id="resumen-final-integrado" class="resumen-final">
+          <div class="text-center ${feedbackClass}">
+            <div style="color:#fff"><strong>Resumen:</strong> Tus respuestas correctas fueron ${respuestasCorrectas_count} de ${totalPreguntas} (${porcentaje}%)</div>
+        <ul class="mt-2 list-unstyled" style="color:#fff">${items}</ul>
           </div>
         </div>
-      </div>
-    `;
-        container.appendChild(col);
-    });
+      `;
 
-    // Resto del código (lógica de flip y audio) se mantiene igual
-    const cards = document.querySelectorAll('.card-mom3-10');
-    let currentAudio = null;
-    let currentCard = null;
+            feedbackExterno.innerHTML = resumenHTML;
+            feedbackExterno.classList.remove('d-none');
+        }
 
-    cards.forEach(card => {
-        const audio = card.querySelector('audio');
+        // Marcar como completado
+        quizCompletado = true;
+        preguntaActualNav = totalPreguntas;
 
-        card.addEventListener('click', () => {
-            if (currentCard === card) return;
-            closeAllExcept(card);
+        // Mostrar navegación externa
+        document.getElementById('navegacion-resumen').classList.remove('d-none');
 
-            if (audio) {
-                currentAudio = audio;
-                currentCard = card;
-                card.classList.add('flipped');
-                audio.play();
+        // Actualizar contador de navegación
+        document.getElementById('totalPreguntasNav').textContent = totalPreguntas;
+        document.getElementById('preguntaActualNav').textContent = totalPreguntas;
+
+        // Ocultar todos los botones "Continuar" y sus contenedores inmediatamente
+        document.querySelectorAll('.btn-siguiente-container').forEach((container) => {
+            container.classList.add('d-none');
+            container.style.display = 'none';
+        });
+        document.querySelectorAll('[data-siguiente]').forEach((btn) => {
+            btn.classList.add('d-none');
+            btn.style.display = 'none';
+        });
+
+        // Configurar navegación
+        configurarNavegacionResumen();
+    }
+
+    function siguientePregunta(proximaPregunta) {
+        // Verificar si hemos completado todas las preguntas
+        if (proximaPregunta > totalPreguntas) {
+            mostrarResumenFinal();
+            return;
+        }
+
+        preguntaActual = proximaPregunta;
+        mostrarPregunta(proximaPregunta);
+    }
+
+    function reiniciarActividad() {
+        // Restablecer variables
+        preguntaActual = 1;
+        respuestasUsuario = {};
+        resultados = {};
+        quizCompletado = false;
+        preguntaActualNav = 1;
+
+        // Limpiar todas las selecciones y habilitar opciones
+        document.querySelectorAll('.opcion-respuesta').forEach((opcion) => {
+            opcion.classList.remove('seleccionada_alertas', 'act', 'true', 'false');
+            opcion.style.pointerEvents = 'auto';
+            opcion.style.display = ''; // Restaurar display
+        });
+
+        // Remover clases de pregunta validada
+        document.querySelectorAll('.preguntas_01').forEach((pregunta) => {
+            pregunta.classList.remove('pregunta-validada');
+        });
+
+        // Ocultar todos los mensajes de feedback
+        document.querySelectorAll('[id^="mensaje_error_"]').forEach((elemento) => {
+            elemento.classList.add('d-none');
+        });
+
+        document.querySelectorAll('[id^="resultado_alertas_"]').forEach((elemento) => {
+            elemento.classList.add('d-none');
+        });
+
+        // Limpiar feedback externo
+        const feedbackExterno = document.getElementById('feedback-final-externo');
+        if (feedbackExterno) {
+            feedbackExterno.innerHTML = '';
+            feedbackExterno.classList.add('d-none');
+        }
+
+        // Eliminar resumen integrado si existe (por si acaso)
+        const resumenIntegrado = document.getElementById('resumen-final-integrado');
+        if (resumenIntegrado) {
+            resumenIntegrado.remove();
+        }
+
+        // Eliminar resumenes temporales
+        document.querySelectorAll('#resumen-temporal').forEach((elemento) => {
+            elemento.remove();
+        });
+
+        // Ocultar navegación externa
+        document.getElementById('navegacion-resumen').classList.add('d-none');
+
+        // Restablecer todos los botones "Continuar" y sus contenedores
+        document.querySelectorAll('.btn-siguiente-container').forEach((container) => {
+            container.classList.add('d-none');
+            container.style.display = '';
+        });
+
+        document.querySelectorAll('[data-siguiente]').forEach((btn) => {
+            btn.classList.add('d-none');
+            btn.style.display = '';
+        });
+
+        // Restablecer botones validar
+        document.querySelectorAll('.btn-validar').forEach((btn) => {
+            btn.classList.remove('d-none');
+            btn.style.display = '';
+        });
+
+        // Restablecer todos los elementos de feedback que pudieran estar ocultos
+        document.querySelectorAll('.multi-select-feedback-success, .multi-select-feedback-error, .multi-select-feedback-warning').forEach((feedback) => {
+            feedback.style.display = '';
+        });
+
+        // Reiniciar contador de preguntas validadas
+        preguntasValidadas = 0;
+        actualizarProgresoPreguntas();
+
+        // Mostrar la primera pregunta
+        mostrarPregunta(1);
+    }
+
+    function configurarEventListeners() {
+        // Event listeners para seleccionar opciones usando delegación de eventos
+        document.getElementById('preguntas-container').addEventListener('click', function (event) {
+            if (event.target.classList.contains('opcion-respuesta')) {
+                const preguntaContainer = event.target.closest('.preguntas_01');
+                const opciones = preguntaContainer.querySelectorAll('.opcion-respuesta');
+
+                // Quitar selección previa y clases de resultado
+                opciones.forEach((opt) => {
+                    opt.classList.remove('seleccionada_alertas', 'act', 'true', 'false');
+                });
+
+                // Seleccionar la actual
+                event.target.classList.add('seleccionada_alertas', 'act');
             }
         });
 
-        if (audio) {
-            audio.onended = () => {
-                card.classList.remove('flipped');
-                currentAudio = null;
-                currentCard = null;
-            };
-        }
-    });
+        // Event listeners para botones validar usando delegación de eventos
+        document.getElementById('preguntas-container').addEventListener('click', function (event) {
+            if (event.target.classList.contains('btn-validar') || event.target.closest('.btn-validar')) {
+                const btn = event.target.classList.contains('btn-validar') ? event.target : event.target.closest('.btn-validar');
+                const numeroPregunta = parseInt(btn.getAttribute('data-pregunta'));
+                validarPregunta(numeroPregunta);
+            }
+        });
 
-    function closeAllExcept(exceptCard) {
-        cards.forEach(c => {
-            if (c !== exceptCard) {
-                c.classList.remove('flipped');
-                const audio = c.querySelector('audio');
-                if (audio) {
-                    audio.pause();
-                    audio.currentTime = 0;
-                }
+        // Event listener para botones continuar usando delegación de eventos
+        document.getElementById('preguntas-container').addEventListener('click', function (event) {
+            if (event.target.hasAttribute('data-siguiente') || event.target.closest('[data-siguiente]')) {
+                if (quizCompletado) return;
+                const btn = event.target.hasAttribute('data-siguiente') ? event.target : event.target.closest('[data-siguiente]');
+                const siguientePregunta = parseInt(btn.getAttribute('data-siguiente'));
+                preguntaActual = siguientePregunta;
+                mostrarPregunta(siguientePregunta);
+            }
+        });
+
+        // Event listener para botón reiniciar usando delegación de eventos
+        document.getElementById('preguntas-container').addEventListener('click', function (event) {
+            if (event.target.classList.contains('btn-reiniciar') || event.target.closest('.btn-reiniciar')) {
+                reiniciarActividad();
+            }
+        });
+
+        // Listener global para el botón reiniciar externo (navegación resumen)
+        document.addEventListener('click', function (event) {
+            const reiniciarBtn = event.target.closest('.btn-reiniciar');
+            if (reiniciarBtn) {
+                event.preventDefault();
+                reiniciarActividad();
             }
         });
     }
+
+    // Función para configurar navegación después de completar
+    function configurarNavegacionResumen() {
+        if (navHandlersAdded) return;
+        navHandlersAdded = true;
+
+        // Event listeners para navegación
+        document.getElementById('btnAnteriorNav').addEventListener('click', () => {
+            if (preguntaActualNav > 1) {
+                preguntaActualNav--;
+                mostrarPreguntaNavegacion(preguntaActualNav);
+            }
+        });
+
+        document.getElementById('btnSiguienteNav').addEventListener('click', () => {
+            if (preguntaActualNav < totalPreguntas) {
+                preguntaActualNav++;
+                mostrarPreguntaNavegacion(preguntaActualNav);
+            }
+        });
+
+        function mostrarPreguntaNavegacion(numeroPregunta) {
+            // Ocultar todas las preguntas
+            document.querySelectorAll('.preguntas_01').forEach((pregunta) => {
+                pregunta.classList.add('d-none');
+            });
+
+            // Mostrar pregunta específica
+            const preguntaElement = document.querySelector(`[data-pregunta="${numeroPregunta}"]`);
+            if (preguntaElement) {
+                preguntaElement.classList.remove('d-none');
+
+                // Si el quiz está completado, ocultar elementos de feedback individual y botones "Continuar"
+                if (quizCompletado) {
+                    // Ocultar feedback individual de respuestas
+                    const feedbackIndividual = preguntaElement.querySelectorAll('.multi-select-feedback-success, .multi-select-feedback-error, .multi-select-feedback-warning');
+                    feedbackIndividual.forEach((feedback) => {
+                        if (feedback.closest('#resumen-final-integrado') === null) {
+                            feedback.style.display = 'none';
+                        }
+                    });
+
+                    // Ocultar botones "Continuar" individuales
+                    const botonesIndividuales = preguntaElement.querySelectorAll('.btn-siguiente:not(#btnSiguienteNav)');
+                    botonesIndividuales.forEach((btn) => {
+                        btn.style.display = 'none';
+                    });
+
+                    // Ocultar contenedores de botones "Continuar"
+                    const contenedoresContinuar = preguntaElement.querySelectorAll('.btn-siguiente-container');
+                    contenedoresContinuar.forEach((container) => {
+                        container.style.display = 'none';
+                    });
+
+                    // Ocultar botón validar también durante la navegación del resumen
+                    const btnValidar = preguntaElement.querySelector('.btn-validar');
+                    if (btnValidar) btnValidar.style.display = 'none';
+                }
+            }
+
+            // Actualizar contador en navegación
+            document.getElementById('preguntaActualNav').textContent = numeroPregunta;
+
+            // Actualizar botones
+            const btnAnterior = document.getElementById('btnAnteriorNav');
+            const btnSiguiente = document.getElementById('btnSiguienteNav');
+
+            btnAnterior.disabled = numeroPregunta === 1;
+            btnSiguiente.disabled = numeroPregunta === totalPreguntas;
+        }
+    }
+
+    // Funcionalidad del cuestionario secuencial
+    function inicializarCuestionario() {
+        preguntaActual = 1;
+        respuestasUsuario = {};
+        resultados = {};
+        mostrarPregunta(1);
+        configurarEventListeners();
+    }
+
+    // Inicializar el cuestionario
+    inicializarCuestionario();
+
+    // Inicializa el progreso al cargar la página
+    actualizarProgresoPreguntas();
 }

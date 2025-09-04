@@ -1,79 +1,46 @@
 export function init() {
-    //-------------------------------------//
-    //OBS-SEG-MOM3-8
-    let audiosObsSegMom38 = document.querySelectorAll(".card_obs-seg-mom3-8 audio");
-    let botonesActivos = document.querySelectorAll(".boton_obs-seg-mom3-8");
-    let cardsActivas = document.querySelectorAll(".card_obs-seg-mom3-8");
 
-    // Función para detener todos los audios excepto el especificado
-    function detenerOtrosAudios(audioActual) {
-        audiosObsSegMom38.forEach(audio => {
-            if (audio !== audioActual && !audio.paused) {
-                audio.pause();
-                audio.currentTime = 0;
+    // Datos de la información
+    const infoDataMom3Sld8 = {
+        1: "<strong>1. ¿Por qué ocurrió el accidente?</strong><br>Porque la mano del trabajador quedó atrapada en la prensa de corte.",
+        2: "<strong>2. ¿Por qué no estaba usando guantes de protección?</strong><br>Porque intentó retirar un residuo de material sin detener la máquina.",
+        3: "<strong>3. ¿Por qué pensaba que los guantes podían engancharse?</strong><br>Porque no sabía que era obligatorio apagarla antes de limpiar.",
+        4: "<strong>4. ¿Por qué no había recibido una capacitación adecuada?</strong><br>Porque no recibió capacitación específica sobre procedimientos seguros.",
+        5: "<strong>5. ¿Por qué la empresa no tiene un programa de formación continua?</strong><br>Porque la empresa no tiene un programa formal de inducción en seguridad para operadores de maquinaria."
+    };
+
+    // Función para cambiar la información
+    function changeInfo(buttonId) {
+        const infoText = document.getElementById('info-text-mom3-8');
+
+        if (infoText) {
+            infoText.innerHTML = infoDataMom3Sld8[buttonId];
+        }
+
+        // Actualizar estado activo de los botones
+        const buttons = document.querySelectorAll('.circle-button-mom3-8');
+
+        buttons.forEach(button => {
+            if (button.getAttribute('data-id') === buttonId) {
+                button.classList.add('active');
+            }
+
+            else {
+                button.classList.remove('active');
             }
         });
     }
 
-    // Función para quitar la clase activa de todos los botones
-    function quitarActivoBotones() {
-        botonesActivos.forEach(boton => {
-            boton.classList.remove('activo');
-        });
-    }
+    // Añadir event listeners a los botones
+    const buttons = document.querySelectorAll('.circle-button-mom3-8');
 
-    // Función para quitar la clase activa de todas las cards
-    function quitarActivoCards() {
-        cardsActivas.forEach(card => {
-            card.classList.remove('activo');
-        });
-    }
-
-    // Configurar event listeners para los controles de audio
-    audiosObsSegMom38.forEach(audio => {
-        audio.addEventListener('play', function () {
-            detenerOtrosAudios(this);
-        });
-
-        audio.addEventListener('ended', function () {
-            // Cuando el audio termina, quitar las clases activas
-            const numero = this.id.split('-')[1];
-            document.querySelector(`.boton-${numero}`).classList.remove('activo');
-            document.getElementById(`card-${numero}_obs-seg-mom3-8`).classList.remove('activo');
+    buttons.forEach(button => {
+        button.addEventListener('click', function () {
+            const buttonId = this.getAttribute('data-id');
+            changeInfo(buttonId);
         });
     });
 
-    // Hacer la función accesible globalmente
-    window.mostrarCardObsSegMom38 = function (numero) {
-        // Quitar clases activas de todos los botones y cards
-        quitarActivoBotones();
-        quitarActivoCards();
-
-        // Añadir clase activa al botón seleccionado
-        const botonSeleccionado = document.querySelector(`.boton-${numero}`);
-        if (botonSeleccionado) {
-            botonSeleccionado.classList.add('activo');
-        }
-
-        // Mostrar la tarjeta seleccionada y añadir clase activa
-        let card = document.getElementById(`card-${numero}_obs-seg-mom3-8`);
-        if (card) {
-            card.style.display = "block";
-            card.classList.add('activo');
-        }
-
-        // Detener cualquier otro audio en reproducción
-        detenerOtrosAudios();
-
-        // Reproducir el audio de la tarjeta seleccionada
-        let audio = document.getElementById(`audio-${numero}_obs-seg-mom3-8`);
-        if (audio) {
-            audio.play();
-        }
-    };
-
-    // Asegurar que todas las tarjetas estén ocultas inicialmente
-    document.querySelectorAll(".card_obs-seg-mom3-8").forEach(card => {
-        card.style.display = "none";
-    });
+    // Inicializar con el primer elemento activo
+    changeInfo('1');
 }

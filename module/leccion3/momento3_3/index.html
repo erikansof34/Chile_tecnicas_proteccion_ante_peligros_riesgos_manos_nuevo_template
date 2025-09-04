@@ -1,403 +1,238 @@
-<section class="row">
-    <div class="animate__animated animate__fadeInLeftBig col-12 sf-bg-dark sf-ct-col">
-        <img src="../../assets/img/avatars/avatar_hombre_señalando_telefono_fondo_azul.webp" alt="avatar"
-            class="sf-img-xl-10 mx-auto d-none d-xl-block">
+<section class="row h-100">
+    <div class="animate__animated animate__fadeInLeftBig  col-12 col-lg-5 sf-bg-dark sf-cl-row">
         <div class="ms-xl-4 mx-xl-0">
-            <h1 class="sf-text-white text-center">
-                Principales aspectos de la vigilancia
-            </h1>
-            <img src="../../assets/img/avatars/avatar_hombre_mirando_lista_fondo_azul.webp" alt="avatar"
-                class="sf-img-80 sf-img-sm-60 sf-img-md-40 sf-img-lg-30 mx-auto d-xl-none mb-2">
-            <p class="sf-text-white text-justify">
-                La vigilancia ambiental y de la salud identifica <strong>riesgos ambientales</strong> que
-                afectan la
-                <strong>salud,</strong>
-                facilitando decisiones y
-                acciones preventivas. Incluye el <strong>monitoreo del aire, agua, suelo y enfermedades</strong>
-                relacionadas con el
-                entorno.
+            <p class="hipt hipt-light mb-3">
+                Haz clic para ejecutar el video
+                <i class="icon-inline icon-inline--start fa-solid fa-arrow-turn-down"></i>
+            </p>
+            <!-- Aquí va el video -->
+            <div class="iframe-container mostrar-web d-flex justify-content-center align-items-center" id="Slide3-3Web">
+                <div class="loader spinner-pulse"></div>
+            </div>
+            <p class="text-justify sf-text-white py-4">
+                <span class="sf-txt-800">Traslado a un centro de salud:</span> Si la lesión es grave, el trabajador debe
+                ser trasladado a la mutualidad
+                a la que la
+                empresa está afiliada (Mutual de Seguridad, ACHS, IST o CChC).
             </p>
         </div>
     </div>
-
-    <div class="animate__animated animate__fadeInRightBig col-12  sf-cb-row">
-        <i class="hipt hipt-light mb-3">
-            Haz clic sobre cada elemento para ver más información
-            <i class="icon-inline icon-inline--start fa-solid fa-arrow-turn-down"></i>
-        </i>
-
-        <div class="mb-4 sf-buttons-row-mobile">
-            <button class="sf-btn sf-btn-purple mrgin active" data-target="ambiental" id="btn-ambiental">
-                Vigilancia ambiental
-            </button>
-            <button class="sf-btn sf-btn-purple mrgin mt-2 mt-md-0" data-target="salud" id="btn-salud">
-                Vigilancia salud
-            </button>
-        </div>
-
-        <!-- Títulos añadidos aquí -->
-        <h1 class="mb-4 sf-text-purple" id="content-title">La vigilancia ambiental</h1>
-
-        <!-- Contenido de Vigilancia Ambiental (visible inicialmente) -->
-        <div class="vigilancia-content" id="ambiental-content">
-            <div class="row">
-                <!-- Carrusel de imágenes -->
-                <div
-                    class="animate__animated animate__fadeInBottomLeft animate__delay-1s col-lg-6 col-md-12 mb-4 mb-lg-0">
-                    <div id="ambientalCarousel" class="carousel slide vigilancia-mom3-3-carousel"
-                        data-bs-ride="carousel">
-                        <!-- Indicadores (puntos) añadidos aquí -->
-                        <div class="carousel-indicators">
-                            <button type="button" data-bs-target="#ambientalCarousel" data-bs-slide-to="0"
-                                class="active" aria-current="true" aria-label="Slide 1"></button>
-                            <button type="button" data-bs-target="#ambientalCarousel" data-bs-slide-to="1"
-                                aria-label="Slide 2"></button>
-                            <button type="button" data-bs-target="#ambientalCarousel" data-bs-slide-to="2"
-                                aria-label="Slide 3"></button>
-                            <button type="button" data-bs-target="#ambientalCarousel" data-bs-slide-to="3"
-                                aria-label="Slide 4"></button>
-                            <button type="button" data-bs-target="#ambientalCarousel" data-bs-slide-to="4"
-                                aria-label="Slide 5"></button>
-                        </div>
-                        <div class="carousel-inner rounded-3">
-                            <div class="carousel-item active">
-                                <img src="../../assets/img/momento3_3/vigi_am_1_sld22.webp"
-                                    class="d-block w-100 vigilancia-mom3-3-img" alt="Vigilancia ambiental 1">
-                            </div>
-                            <div class="carousel-item">
-                                <img src="../../assets/img/momento3_3/vigi_am_2_sld22.webp"
-                                    class="d-block w-100 vigilancia-mom3-3-img" alt="Vigilancia ambiental 2">
-                            </div>
-                            <div class="carousel-item">
-                                <img src="../../assets/img/momento3_3/vigi_am_3_sld22.webp"
-                                    class="d-block w-100 vigilancia-mom3-3-img" alt="Vigilancia ambiental 3">
-                            </div>
-                            <div class="carousel-item">
-                                <img src="../../assets/img/momento3_3/vigi_am_4_sld22.webp"
-                                    class="d-block w-100 vigilancia-mom3-3-img" alt="Vigilancia ambiental 4">
-                            </div>
-                            <div class="carousel-item">
-                                <img src="../../assets/img/momento3_3/vigi_am_5_sld22.webp"
-                                    class="d-block w-100 vigilancia-mom3-3-img" alt="Vigilancia ambiental 5">
-                            </div>
-                        </div>
-                        <button class="carousel-control-prev vigilancia-mom3-3-carousel-control" type="button"
-                            data-bs-target="#ambientalCarousel" data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true">
-                                <i class="fas fa-chevron-left"></i>
-                            </span>
-                            <span class="visually-hidden">Previous</span>
-                        </button>
-                        <button class="carousel-control-next vigilancia-mom3-3-carousel-control" type="button"
-                            data-bs-target="#ambientalCarousel" data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true">
-                                <i class="fas fa-chevron-right"></i>
-                            </span>
-                            <span class="visually-hidden">Next</span>
-                        </button>
+    <div class="animate__animated animate__fadeInRightBig col-12 col-lg-7 p-0 d-flex justify-content-center">
+        <div class="sf-cr-row">
+            <h5 class="sf-text-pink text-center">
+                <strong>Debes conocerlo como la palma de Tu Mano…</strong>
+            </h5>
+            <h5 class="sf-text-purple text-center">
+                <strong>1. Atención
+                    inmediata al
+                    trabajador</strong>
+            </h5>
+            <p class="text-justify">
+                <span class="sf-txt-800">Primeros auxilios:</span> Si el accidente es leve, aplicar primeros auxilios en
+                el lugar de trabajo.
+            </p>
+            <!-- <div class="mx-xl-5 my-4 my-lg-0"> -->
+            <i class="hipt hipt-light mb-3">
+                Veamos estas recomendaciones que nos pueden ayudar en caso de un evento con manos en la operación.
+                <i class="icon-inline icon-inline--start fa-solid fa-arrow-turn-down ms-2"></i>
+            </i>
+            <!-- Actividad -->
+            <div class="risk-protocol-list d-flex flex-wrap gap-3 justify-content-center">
+                <div class="protocol-card" data-id="1">
+                    <div class="protocol-card-header">
+                        <img src="./momento3_3/img/riesgos_microbiológicos.png" alt="Paso 1" class="protocol-card-icon">
+                        <span> 1. Cortes y laceraciones</span>
                     </div>
-                    <p class="text-justify mt-3">
-                        La <strong>vigilancia ambiental</strong> se refiere a la observación sistemática y continua
-                        de factores
-                        ambientales que puedan tener un impacto en la salud humana. Requieren de un enfoque
-                        sistemático y participativo, siendo los
-                        pasos clave los siguientes:
-                    </p>
+                    <button class="sf-btn sf-btn-purple" data-bs-toggle="modal"
+                        data-bs-target="#momento3-3_ver_protocolo1">
+                        <i class="fa fa-eye"></i> Ver protocolo
+                    </button>
                 </div>
-
-                <!-- Acordeón de información -->
-                <div class="animate__animated animate__fadeInBottomRight animate__delay-2s col-lg-6 col-md-12">
-                    <i class="hipt hipt-light mb-3">
-                        Haz clic sobre cada elemento para ver más información
-                        <i class="icon-inline icon-inline--start fa-solid fa-arrow-turn-down"></i>
-                    </i>
-                    <div class="accordion vigilancia-mom3-3-accordion" id="ambientalAccordion">
-                        <div class="accordion-item vigilancia-mom3-3-accordion-item">
-                            <h2 class="accordion-header vigilancia-mom3-3-accordion-header">
-                                <button class="accordion-button vigilancia-mom3-3-accordion-button" type="button"
-                                    data-bs-toggle="collapse" data-bs-target="#collapseOne">
-                                    <span class="accordion-text">Identificación de peligros</span>
-                                    <i class="fas fa-chevron-down accordion-icon ms-auto"></i>
-                                </button>
-                            </h2>
-                            <div id="collapseOne"
-                                class="accordion-collapse collapse show vigilancia-mom3-3-accordion-collapse"
-                                data-bs-parent="#ambientalAccordion">
-                                <div class="accordion-body vigilancia-mom3-3-accordion-body">
-                                    <p class="text-justify mt-3">Identificación de peligros: Proceso
-                                        sistemático para reconocer los factores
-                                        ambientales que pueden afectar la salud
-                                        humana.</p>
-                                    <audio src="../../assets/audio/momento3_3/identificacion-de-peligrosM3-ppt-32.mp3"
-                                        controls></audio>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="accordion-item vigilancia-mom3-3-accordion-item">
-                            <h2 class="accordion-header vigilancia-mom3-3-accordion-header">
-                                <button class="accordion-button collapsed vigilancia-mom3-3-accordion-button"
-                                    type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
-                                    <span class="accordion-text">Evaluación de riesgos</span>
-                                    <i class="fas fa-chevron-down accordion-icon ms-auto"></i>
-                                </button>
-                            </h2>
-                            <div id="collapseTwo"
-                                class="accordion-collapse collapse vigilancia-mom3-3-accordion-collapse"
-                                data-bs-parent="#ambientalAccordion">
-                                <div class="accordion-body vigilancia-mom3-3-accordion-body">
-                                    <p class="text-justify mt-3">Evaluación de riesgos: Análisis de la
-                                        probabilidad e impacto de los peligros
-                                        identificados sobre la salud.</p>
-                                    <audio src="../../assets/audio/momento3_3/evaluacion-de-riesgos-m3-ppt-32.mp3"
-                                        controls></audio>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="accordion-item vigilancia-mom3-3-accordion-item">
-                            <h2 class="accordion-header vigilancia-mom3-3-accordion-header">
-                                <button class="accordion-button collapsed vigilancia-mom3-3-accordion-button"
-                                    type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">
-                                    <span class="accordion-text">Establecimiento de medidas de control</span>
-                                    <i class="fas fa-chevron-down accordion-icon ms-auto"></i>
-                                </button>
-                            </h2>
-                            <div id="collapseThree"
-                                class="accordion-collapse collapse vigilancia-mom3-3-accordion-collapse"
-                                data-bs-parent="#ambientalAccordion">
-                                <div class="accordion-body vigilancia-mom3-3-accordion-body">
-                                    <p class="text-justify mt-3">Establecimiento de medidas de control:
-                                        Implementación de acciones para mitigar o
-                                        eliminar los riesgos identificados.</p>
-                                    <audio src="../../assets/audio/momento3_3/establecimiento-de-medidasm3-ppt-32.mp3"
-                                        controls></audio>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="accordion-item vigilancia-mom3-3-accordion-item">
-                            <h2 class="accordion-header vigilancia-mom3-3-accordion-header">
-                                <button class="accordion-button collapsed vigilancia-mom3-3-accordion-button"
-                                    type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour">
-                                    <span class="accordion-text">Capacitación y sensibilización</span>
-                                    <i class="fas fa-chevron-down accordion-icon ms-auto"></i>
-                                </button>
-                            </h2>
-                            <div id="collapseFour"
-                                class="accordion-collapse collapse vigilancia-mom3-3-accordion-collapse"
-                                data-bs-parent="#ambientalAccordion">
-                                <div class="accordion-body vigilancia-mom3-3-accordion-body">
-                                    <p class="text-justify mt-3">Capacitación y sensibilización: Educación y
-                                        concientización sobre los riesgos
-                                        ambientales y medidas de prevención.</p>
-                                    <audio src="../../assets/audio/momento3_3/capacitacion-m3-ppt-32.mp3"
-                                        controls></audio>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="accordion-item vigilancia-mom3-3-accordion-item">
-                            <h2 class="accordion-header vigilancia-mom3-3-accordion-header">
-                                <button class="accordion-button collapsed vigilancia-mom3-3-accordion-button"
-                                    type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive">
-                                    <span class="accordion-text">Monitoreo y revisión</span>
-                                    <i class="fas fa-chevron-down accordion-icon ms-auto"></i>
-                                </button>
-                            </h2>
-                            <div id="collapseFive"
-                                class="accordion-collapse collapse vigilancia-mom3-3-accordion-collapse"
-                                data-bs-parent="#ambientalAccordion">
-                                <div class="accordion-body vigilancia-mom3-3-accordion-body">
-                                    <p class="text-justify mt-3">Monitoreo y revisión: Evaluación continua
-                                        de la efectividad de las medidas
-                                        implementadas y ajustes necesarios.</p>
-                                    <audio src="../../assets/audio/momento3_3/monitoreo-m3-ppt-32.mp3" controls></audio>
-                                </div>
-                            </div>
-                        </div>
+                <div class="protocol-card" data-id="2">
+                    <div class="protocol-card-header">
+                        <img src="./momento3_3/img/quemaduras.png" alt="Paso 2" class="protocol-card-icon">
+                        <span> 2. Quemaduras</span>
                     </div>
+                    <button class="sf-btn sf-btn-purple" data-bs-toggle="modal"
+                        data-bs-target="#momento3-3_ver_protocolo2">
+                        <i class="fa fa-eye"></i> Ver protocolo
+                    </button>
+                </div>
+                <div class="protocol-card" data-id="3">
+                    <div class="protocol-card-header">
+                        <img src="./momento3_3/img/piel_agrietada.png" alt="Paso 3" class="protocol-card-icon">
+                        <span> 3. Amputaciones o lesiones<br>graves</span>
+                    </div>
+                    <button class="sf-btn sf-btn-purple" data-bs-toggle="modal"
+                        data-bs-target="#momento3-3_ver_protocolo3">
+                        <i class="fa fa-eye"></i> Ver protocolo
+                    </button>
+                </div>
+                <div class="protocol-card" data-id="4">
+                    <div class="protocol-card-header">
+                        <img src="./momento3_3/img/alergias.png" alt="Paso 4" class="protocol-card-icon">
+                        <span> 4. Contusiones o <br>aplastamientos</span>
+                    </div>
+                    <button class="sf-btn sf-btn-purple" data-bs-toggle="modal"
+                        data-bs-target="#momento3-3_ver_protocolo4">
+                        <i class="fa fa-eye"></i> Ver protocolo
+                    </button>
                 </div>
             </div>
-        </div>
 
-        <!-- Contenido de Vigilancia Salud (oculto inicialmente) -->
-        <div class="vigilancia-content" id="salud-content" style="display: none;">
-            <div class="row">
-                <!-- Carrusel de imágenes -->
-                <div class="col-lg-6 col-md-12 mb-4 mb-lg-0">
-                    <div id="saludCarousel" class="carousel slide vigilancia-mom3-3-carousel" data-bs-ride="carousel">
-                        <!-- Indicadores (puntos) añadidos aquí -->
-                        <div class="carousel-indicators">
-                            <button type="button" data-bs-target="#saludCarousel" data-bs-slide-to="0" class="active"
-                                aria-current="true" aria-label="Slide 1"></button>
-                            <button type="button" data-bs-target="#saludCarousel" data-bs-slide-to="1"
-                                aria-label="Slide 2"></button>
-                            <button type="button" data-bs-target="#saludCarousel" data-bs-slide-to="2"
-                                aria-label="Slide 3"></button>
-                            <button type="button" data-bs-target="#saludCarousel" data-bs-slide-to="3"
-                                aria-label="Slide 4"></button>
-                            <button type="button" data-bs-target="#saludCarousel" data-bs-slide-to="4"
-                                aria-label="Slide 5"></button>
-                        </div>
-                        <div class="carousel-inner rounded-3">
-                            <div class="carousel-item active">
-                                <img src="../../assets/img/momento3_3/vigi_salu_1_sld22.webp"
-                                    class="d-block w-100 vigilancia-mom3-3-img" alt="Vigilancia salud 1">
-                            </div>
-                            <div class="carousel-item">
-                                <img src="../../assets/img/momento3_3/vigi_salu_2_sld22.webp"
-                                    class="d-block w-100 vigilancia-mom3-3-img" alt="Vigilancia salud 2">
-                            </div>
-                            <div class="carousel-item">
-                                <img src="../../assets/img/momento3_3/vigi_salu_3_sld22.webp"
-                                    class="d-block w-100 vigilancia-mom3-3-img" alt="Vigilancia salud 3">
-                            </div>
-                            <div class="carousel-item">
-                                <img src="../../assets/img/momento3_3/vigi_salu_4_sld22.webp"
-                                    class="d-block w-100 vigilancia-mom3-3-img" alt="Vigilancia salud 4">
-                            </div>
-                            <div class="carousel-item">
-                                <img src="../../assets/img/momento3_3/vigi_salu_5_sld22.webp"
-                                    class="d-block w-100 vigilancia-mom3-3-img" alt="Vigilancia salud 5">
-                            </div>
-                        </div>
-                        <button class="carousel-control-prev vigilancia-mom3-3-carousel-control" type="button"
-                            data-bs-target="#saludCarousel" data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true">
-                                <i class="fas fa-chevron-left"></i>
-                            </span>
-                            <span class="visually-hidden">Previous</span>
-                        </button>
-                        <button class="carousel-control-next vigilancia-mom3-3-carousel-control" type="button"
-                            data-bs-target="#saludCarousel" data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true">
-                                <i class="fas fa-chevron-right"></i>
-                            </span>
-                            <span class="visually-hidden">Next</span>
-                        </button>
-                    </div>
-                    <p class="text-justify mt-3">
-                        La <strong>vigilancia de salud</strong> tiene por objetivo principal detectar tempranamente
-                        daños en la salud
-                        del trabajador. En general esta compuesta de las siguientes actividades:
-                    </p>
-                </div>
-
-                <!-- Acordeón de información -->
-                <div class="col-lg-6 col-md-12">
-                    <i class="hipt hipt-light mb-3">
-                        Haz clic sobre cada elemento para ver más información
-                        <i class="icon-inline icon-inline--start fa-solid fa-arrow-turn-down"></i>
-                    </i>
-                    <div class="accordion vigilancia-mom3-3-accordion" id="saludAccordion">
-                        <div class="accordion-item vigilancia-mom3-3-accordion-item">
-                            <h2 class="accordion-header vigilancia-mom3-3-accordion-header">
-                                <button class="accordion-button vigilancia-mom3-3-accordion-button" type="button"
-                                    data-bs-toggle="collapse" data-bs-target="#collapseSaludOne">
-                                    <span class="accordion-text">Exámenes pre ocupacionales</span>
-                                    <i class="fas fa-chevron-down accordion-icon ms-auto"></i>
-                                </button>
-                            </h2>
-                            <div id="collapseSaludOne"
-                                class="accordion-collapse collapse show vigilancia-mom3-3-accordion-collapse"
-                                data-bs-parent="#saludAccordion">
-                                <div class="accordion-body vigilancia-mom3-3-accordion-body">
-                                    <p class="text-justify mt-3">Tienen por finalidad evaluar si el trabajador tiene
-                                        una salud compatible con el
-                                        agente peligroso al cual se expondrá.
-                                    </p>
-                                    <audio src="../../assets/audio/momento3_3/examenes_preocupacionales_l3_sld4.mp3"
-                                        controls></audio>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="accordion-item vigilancia-mom3-3-accordion-item">
-                            <h2 class="accordion-header vigilancia-mom3-3-accordion-header">
-                                <button class="accordion-button collapsed vigilancia-mom3-3-accordion-button"
-                                    type="button" data-bs-toggle="collapse" data-bs-target="#collapseSaludTwo">
-                                    <span class="accordion-text">Exámenes periódicos</span>
-                                    <i class="fas fa-chevron-down accordion-icon ms-auto"></i>
-                                </button>
-                            </h2>
-                            <div id="collapseSaludTwo"
-                                class="accordion-collapse collapse vigilancia-mom3-3-accordion-collapse"
-                                data-bs-parent="#saludAccordion">
-                                <div class="accordion-body vigilancia-mom3-3-accordion-body">
-                                    <p class="text-justify mt-3">En algunos casos sirven para evaluar el nivel
-                                        de exposición del trabajador al
-                                        agente peligroso y en otros para evaluar daño en la salud.
-                                    </p>
-                                    <audio src="../../assets/audio/momento3_3/examenes_periodicos_l3_sld4.mp3"
-                                        controls></audio>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="accordion-item vigilancia-mom3-3-accordion-item">
-                            <h2 class="accordion-header vigilancia-mom3-3-accordion-header">
-                                <button class="accordion-button collapsed vigilancia-mom3-3-accordion-button"
-                                    type="button" data-bs-toggle="collapse" data-bs-target="#collapseSaludThree">
-                                    <span class="accordion-text">Exámenes ocupacionales</span>
-                                    <i class="fas fa-chevron-down accordion-icon ms-auto"></i>
-                                </button>
-                            </h2>
-                            <div id="collapseSaludThree"
-                                class="accordion-collapse collapse vigilancia-mom3-3-accordion-collapse"
-                                data-bs-parent="#saludAccordion">
-                                <div class="accordion-body vigilancia-mom3-3-accordion-body">
-                                    <p class="text-justify mt-3">Se utilizan para evaluar si el trabajador
-                                        mantiene una salud compatible con la
-                                        exposición.
-                                    </p>
-                                    <audio src="../../assets/audio/momento3_3/examenes_ocupacionales_l3_sld4.mp3"
-                                        controls></audio>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="accordion-item vigilancia-mom3-3-accordion-item">
-                            <h2 class="accordion-header vigilancia-mom3-3-accordion-header">
-                                <button class="accordion-button collapsed vigilancia-mom3-3-accordion-button"
-                                    type="button" data-bs-toggle="collapse" data-bs-target="#collapseSaludFour">
-                                    <span class="accordion-text">Exámenes de egreso</span>
-                                    <i class="fas fa-chevron-down accordion-icon ms-auto"></i>
-                                </button>
-                            </h2>
-                            <div id="collapseSaludFour"
-                                class="accordion-collapse collapse vigilancia-mom3-3-accordion-collapse"
-                                data-bs-parent="#saludAccordion">
-                                <div class="accordion-body vigilancia-mom3-3-accordion-body">
-                                    <p class="text-justify mt-3">Se realizan cuando el trabajador finaliza la
-                                        exposición al agente peligroso,
-                                        porque se cambia de puesto de trabajo, termina su vida laboral u otros
-                                        motivos.
-                                    </p>
-                                    <audio src="../../assets/audio/momento3_3/examenes_egreso_l3_sld4.mp3"
-                                        controls></audio>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="accordion-item vigilancia-mom3-3-accordion-item">
-                            <h2 class="accordion-header vigilancia-mom3-3-accordion-header">
-                                <button class="accordion-button collapsed vigilancia-mom3-3-accordion-button"
-                                    type="button" data-bs-toggle="collapse" data-bs-target="#collapseSaludFive">
-                                    <span class="accordion-text">Exámenes post exposición</span>
-                                    <i class="fas fa-chevron-down accordion-icon ms-auto"></i>
-                                </button>
-                            </h2>
-                            <div id="collapseSaludFive"
-                                class="accordion-collapse collapse vigilancia-mom3-3-accordion-collapse"
-                                data-bs-parent="#saludAccordion">
-                                <div class="accordion-body vigilancia-mom3-3-accordion-body">
-                                    <p class="text-justify mt-3">Algunos agentes peligrosos tienen una latencia
-                                        de varios años o efectos que se
-                                        agudizan en el tiempo por lo cual se requiere mantener la vigilancia de
-                                        salud
-                                        aún después de terminada la exposición del trabajador.
-                                    </p>
-                                    <audio src="../../assets/audio/momento3_3/examenes_postexposicion_l3_sld4.mp3"
-                                        controls></audio>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
 </section>
+
+<!-- Modal -->
+<div class="modal fade" id="momento3-3_ver_protocolo1" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Ver protocolo</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"><i
+                        class="fa fa-times"></i></button>
+            </div>
+            <div class="modal-body">
+                <img src="./momento3_3/img/riesgos_microbiológicos.png" alt="" class="sf-img-20 mx-auto">
+                <p class="text-center">
+                    <strong>Acción inmediata:</strong>
+                <ul>
+                    <li>Detener la actividad.</li>
+                    <li>Lavar la herida con agua limpia o solución salina.</li>
+                    <li>Presionar con una gasa estéril o un paño limpio. Si es necesario, elevar la mano por encima del
+                        corazón.</li>
+                    <li>Usar un vendaje limpio y estéril.</li>
+                    <li>Si el corte es profundo o no se puede detener el sangrado, buscar atención médica
+                        inmediatamente.</li>
+                    <li>Informar al supervisor y registrar el incidente según los protocolos de seguridad de la empresa.
+                    </li>
+                </ul>
+                </p>
+                <p class="text-center">
+                    <strong>Seguimiento:</strong>
+                <ul>
+                    <li>Mantener la herida limpia y seca.</li>
+                    <li>Si es necesario, acudir a un profesional médico para una evaluación más detallada.</li>
+                    <li>Realizar un informe de accidente de trabajo para su posterior análisis y prevención.</li>
+                </ul>
+                </p>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="momento3-3_ver_protocolo2" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Ver protocolo</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"><i
+                        class="fa fa-times"></i></button>
+            </div>
+            <div class="modal-body">
+                <img src="./momento3_3/img/quemaduras.png" alt="" class="sf-img-20 mx-auto">
+                <p class="text-center">
+                    <strong>Acción inmediata:</strong>
+                <ul>
+                    <li>Detener la actividad y alejarse de la fuente de calor o producto químico.</li>
+                    <li>Sumergir la mano en agua fría (no helada) durante al menos 10-15 minutos. No aplicar hielo
+                        directamente.</li>
+                    <li>Cubrir con una gasa estéril o un paño limpio, sin apretar.</li>
+                    <li>No aplicar pomadas ni remedios caseros.</li>
+                    <li>Si el corte es profundo o no se puede detener el sangrado, buscar atención médica
+                        inmediatamente.</li>
+                    <li>Quemaduras de segundo y tercer grado requieren atención médica inmediata.
+                    </li>
+                </ul>
+                </p>
+                <p class="text-center">
+                    <strong>Seguimiento:</strong>
+                <ul>
+                    <li>Consultar a un médico si la quemadura es extensa o profunda.</li>
+                    <li>Documentar el incidente para análisis y medidas preventivas.</li>
+                    <li>Realizar un informe de accidente de trabajo para su posterior análisis y prevención.</li>
+                </ul>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="momento3-3_ver_protocolo3" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Ver protocolo</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"><i
+                        class="fa fa-times"></i></button>
+            </div>
+            <div class="modal-body">
+                <img src="./momento3_3/img/piel_agrietada.png" alt="" class="sf-img-20 mx-auto">
+                <p class="text-center">
+                    <strong>Acción inmediata:</strong>
+                <ul>
+                    <li>Usar un torniquete o aplicar presión directa con un paño estéril. Si es posible, elevar la
+                        extremidad.</li>
+                    <li>Preservar la parte amputada.</li>
+                    <li>Si es posible, recoger el fragmento amputado, limpiarlo suavemente sin frotar y envolverlo en
+                        una gasa húmeda (agua
+                        limpia o solución salina).</li>
+                    <li>Colocar el fragmento en una bolsa de plástico limpia y sellada.</li>
+                    <li>Quemaduras de segundo y tercer grado requieren atención médica inmediata.</li>
+                    <li>Llamar a los servicios de emergencia.
+                    </li>
+                </ul>
+                </p>
+                <p class="text-center">
+                    <strong>Seguimiento:</strong>
+                <ul>
+                    <li>Notificar inmediatamente al equipo de seguridad y supervisión.</li>
+                    <li>Registrar el incidente para análisis y mejora de los protocolos de seguridad.</li>
+                </ul>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="momento3-3_ver_protocolo4" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Ver protocolo</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"><i
+                        class="fa fa-times"></i></button>
+            </div>
+            <div class="modal-body">
+                <img src="./momento3_3/img/alergias.png" alt="" class="sf-img-20 mx-auto">
+                <p class="text-center">
+                    <strong>Acción inmediata:</strong>
+                <ul>
+                    <li>Interrumpir la actividad.</li>
+                    <li>Si hay hinchazón, deformidades o imposibilidad de movimiento, inmovilizar la mano con una férula
+                        o soporte.</li>
+                    <li>Si es posible, recoger el fragmento amputado, limpiarlo suavemente sin frotar y envolverlo en
+                        una gasa húmeda (agua
+                        limpia o solución salina).</li>
+                    <li>Colocar el fragmento en una bolsa de plástico limpia y sellada.</li>
+                    <li>Quemaduras de segundo y tercer grado requieren atención médica inmediata.</li>
+                    <li>Llamar a los servicios de emergencia.
+                    </li>
+                </ul>
+                </p>
+                <p class="text-center">
+                    <strong>Seguimiento:</strong>
+                <ul>
+                    <li>Notificar inmediatamente al equipo de seguridad y supervisión.</li>
+                    <li>Registrar el incidente para análisis y mejora de los protocolos de seguridad.</li>
+                </ul>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
