@@ -1,5 +1,5 @@
 .protocol-card {
-    background-color: #0f172a;
+    background-color: #fff;
     border-radius: 0.7rem;
     padding: 0.8rem 1rem;
     transition: background 0.3s, box-shadow 0.3s, transform 0.2s;
@@ -18,7 +18,7 @@
     opacity: 0;
     transform: translateY(24px);
     animation: cardFadeIn 0.7s cubic-bezier(.4, 0, .2, 1) forwards;
-    color: #fff;
+    color: #4b5563;
 }
 
 .protocol-card:nth-child(1) {
@@ -50,8 +50,8 @@
 
 .protocol-card:hover,
 .protocol-card.active {
-    background-color: #fff;
-    color: #4b5563;
+    background-color: #0f172a;
+    color: #fff;
     box-shadow: 0 8px 24px rgba(0, 123, 138, 0.2);
     transform: scale(1.03);
 }

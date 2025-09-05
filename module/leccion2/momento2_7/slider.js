@@ -189,6 +189,9 @@ export function init() {
 
       feedbackExterno.innerHTML = resumenHTML;
       feedbackExterno.classList.remove('d-none');
+
+      // Actualizar botones de navegación (ocultar Siguiente)
+      actualizarBotonesNavegacion(totalPreguntas, totalPreguntas);
     }
 
     // Marcar como completado
@@ -305,6 +308,9 @@ export function init() {
 
     // Mostrar la primera pregunta
     mostrarPregunta(1);
+
+    // Restablecer visibilidad de botones de navegación
+    actualizarBotonesNavegacion(1, totalPreguntas);
   }
 
   function configurarEventListeners() {
@@ -359,6 +365,34 @@ export function init() {
         reiniciarActividad();
       }
     });
+  }
+
+  // Función para controlar la visibilidad de los botones de navegación
+  function actualizarBotonesNavegacion(preguntaActualNav, totalPreguntas) {
+    const btnAnterior = document.getElementById('btnAnteriorNav');
+    const btnSiguiente = document.getElementById('btnSiguienteNav');
+
+    // Controlar botón Anterior
+    if (preguntaActualNav === 1) {
+      btnAnterior.style.visibility = 'hidden';
+      btnAnterior.style.pointerEvents = 'none';
+      btnAnterior.disabled = true;
+    } else {
+      btnAnterior.style.visibility = 'visible';
+      btnAnterior.style.pointerEvents = 'auto';
+      btnAnterior.disabled = false;
+    }
+
+    // Controlar botón Siguiente
+    if (preguntaActualNav === totalPreguntas) {
+      btnSiguiente.style.visibility = 'hidden';
+      btnSiguiente.style.pointerEvents = 'none';
+      btnSiguiente.disabled = true;
+    } else {
+      btnSiguiente.style.visibility = 'visible';
+      btnSiguiente.style.pointerEvents = 'auto';
+      btnSiguiente.disabled = false;
+    }
   }
 
   // Función para configurar navegación después de completar
@@ -429,6 +463,9 @@ export function init() {
 
       btnAnterior.disabled = numeroPregunta === 1;
       btnSiguiente.disabled = numeroPregunta === totalPreguntas;
+
+      // Actualizar botones de navegación
+      actualizarBotonesNavegacion(numeroPregunta, totalPreguntas);
     }
   }
 

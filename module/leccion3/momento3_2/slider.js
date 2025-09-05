@@ -30,7 +30,7 @@ function initChileSeleccioneActivity() {
             <div class="audio-wrapper" style="position: relative; width: 100%;">
                 <audio controls class=" audio-con-transcripcion" style="height: 40px;"></audio>
                 <i class="fas fa-closed-captioning transcription-toggle" 
-                   style="color: #666; position: absolute; right: 10px; top: 60%; transform: translateY(-50%); cursor: pointer; font-size: 1.2rem;" 
+                   style="color: #666; position: absolute; right: 0%; top: 60%; transform: translateY(-50%); cursor: pointer; font-size: 1.2rem;" 
                    title="Activar subtítulos"></i>
             </div>
             <div id="transcripcion-global" style="position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); background-color: rgba(0, 0, 0, 0.85); color: white; padding: 15px 25px; border-radius: 8px; font-family: 'Montserrat', sans-serif; font-size: 16px; z-index: 10000; display: none; max-width: 80%; text-align: center; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);"></div>

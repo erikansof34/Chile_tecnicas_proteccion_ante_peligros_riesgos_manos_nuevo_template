@@ -1,38 +1,58 @@
 <section class="row h-100">
-    <div class="animate__animated animate__fadeInLeftBig  col-12 col-lg-5 sf-bg-dark sf-cl-row">
-        <div class="ms-xl-4 mx-xl-0">
-            <h1 class="sf-text-white text-center">Veamos qué hacer<br>
-                <span class="sf-text-purple"> Cuando ocurren eventos con las Manos
-                </span>
-            </h1>
-            <p class="hipt hipt-light mb-3">
-                Para comenzar, veamos este caso que ocurrió en la operación y las 3 etapas claves de atención.
-                <i class="icon-inline icon-inline--start fa-solid fa-arrow-turn-down"></i>
-            </p>
-            <!-- Aquí va el video -->
-            <div class="iframe-container mostrar-web d-flex justify-content-center align-items-center" id="Slide3-2Web">
-                <div class="loader spinner-pulse"></div>
+    <div class="animate__animated animate__fadeInLeftBig col-md-12 col-lg-6 sf-bg-dark sf-cl-row">
+        <h1 class="sf-text-white text-center">Veamos qué hacer<br>
+            <span class="sf-text-purple"> Cuando ocurren eventos con las Manos
+            </span>
+        </h1>
+        <img src="../../assets/img/avatars/avatar_hombre_mirando_lista_fondo_azul.webp" alt="avatar"
+            class="sf-img-80 sf-img-sm-60 sf-img-md-50 sf-img-lg-50 sf-img-xl-40 mx-auto mb-2">
+        <p class="text-justify sf-text-white">
+            En Chile, el reporte de un accidente laboral que involucre las manos debe seguir un protocolo basado en la
+            Ley 16.744
+            sobre Accidentes del Trabajo y Enfermedades Profesionales, así como en las regulaciones de la
+            Superintendencia de
+            Seguridad Social (SUSESO). Revisa esta actividad con los pasos clave:
+        </p>
+    </div>
+
+    <div class="animate__animated animate__fadeInRightBig col-md-12 col-lg-6 sf-cr-row">
+        <p class="hipt hipt-light mb-3">
+            Para comenzar, veamos este caso que ocurrió en la operación y las 3 etapas claves de atención.
+            <i class="icon-inline icon-inline--start fa-solid fa-arrow-turn-down"></i>
+        </p>
+        <!-- Aquí va el video -->
+        <div class="iframe-container mostrar-web d-flex justify-content-center align-items-center" id="Slide3-2Web">
+            <div class="loader spinner-pulse"></div>
+        </div>
+
+
+        <div class=" mx-lg-0 me-lg-4 mt-3">
+            <button class="sf-btn sf-btn-purple" data-bs-toggle="modal" data-bs-target="#modal3_etapas">
+                <i class="fas fa-tasks me-2"></i>
+                Actividad
+            </button>
+        </div>
+</section>
+
+
+<!-- Modales -->
+<!-- Modal 1: actividad 3 etapas -->
+<div class="modal fade" id="modal3_etapas" tabindex="-1" aria-labelledby="modal3EtapasLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered sf-modal-xl">
+        <div class="modal-content">
+            <div class="modal-header sf-bg-purple">
+                <h5 class="modal-title text-white" id="modal3EtapasLabel">
+                    <i class="fas fa-tasks me-2"></i>Actividad: Observa el video con la situación, y ayuda al Jefe de
+                    área a organizar las seis (6) etapas que deben seguir a la
+                    ocurrencia de un accidente en la operación:
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"><i
+                        class="fa fa-times"></i></button>
+            </div>
+            <div class="modal-body">
+                <!-- Actividad -->
+                <div id="chile-seleccione-activity" class="quiz-container-chileSORD"></div>
             </div>
         </div>
     </div>
-    <div class="animate__animated animate__fadeInRightBig col-12 col-lg-7 p-0 d-flex justify-content-center">
-        <div class="sf-cr-row">
-            <p class="text-justify">
-                En Chile, el reporte de un accidente laboral que involucre las manos debe seguir un protocolo basado en
-                la Ley 16.744
-                sobre Accidentes del Trabajo y Enfermedades Profesionales, así como en las regulaciones de la
-                Superintendencia de
-                Seguridad Social (SUSESO). Revisa esta actividad con los pasos clave:
-            </p>
-            <!-- <div class="mx-xl-5 my-4 my-lg-0"> -->
-            <i class="hipt hipt-light mb-3">
-                Observa el video con la situación, y ayuda al Jefe de área a organizar las seis (6) etapas que deben
-                seguir a la
-                ocurrencia de un accidente en la operación:
-                <i class="icon-inline icon-inline--start fa-solid fa-arrow-turn-down ms-2"></i>
-            </i>
-            <!-- Actividad -->
-            <div id="chile-seleccione-activity" class="quiz-container-chileSORD"></div>
-        </div>
-    </div>
-</section>
+</div>

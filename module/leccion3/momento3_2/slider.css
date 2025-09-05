@@ -27,7 +27,7 @@
     flex-direction: column;
     align-items: center;
     width: 100%;
-    max-width: 15rem;
+    max-width: 17rem;
     transition: background-color 0.3s ease;
 }
 
@@ -158,7 +158,7 @@
 /* Contenedor del reproductor de audio global */
 .audio-global-container {
     width: 100%;
-    max-width: 429px;
+    max-width: 20.5625rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -169,7 +169,7 @@
 /* Reproductor de audio compacto */
 .audio-global-container audio {
     height: 40px;
-    width: 70%;
+    width: 90%;
 }
 
 /* Resultados */
