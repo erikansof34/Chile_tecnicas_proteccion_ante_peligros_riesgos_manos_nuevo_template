@@ -73,7 +73,7 @@ export function init() {
     const btnValidar = document.createElement('button');
     btnValidar.className = 'sf-btn sf-btn-purple btn-validar';
     btnValidar.disabled = true;
-    btnValidar.innerHTML = '<i class="fas fa-check"></i> Validar';
+    btnValidar.innerHTML = '<i class="fa fa-check-circle"></i> Validar';
 
     // Botón Reiniciar
     const btnReiniciar = document.createElement('button');
