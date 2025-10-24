@@ -861,12 +861,15 @@
 
     function toggleHighlightHeadings() {
         areHeadingsHighlighted = !areHeadingsHighlighted;
-        var headings = document.querySelectorAll('h1, h2, h3, h4, h5, h6, i');
+        var headings = document.querySelectorAll('h1, h2, h3, h4, h5, h6');
         headings.forEach(function (heading) {
-            if (areHeadingsHighlighted) {
-                heading.classList.add('highlighted-heading');
-            } else {
-                heading.classList.remove('highlighted-heading');
+            // Solo resaltar si no está dentro del widget de accesibilidad
+            if (!heading.closest('#accessibility-widget')) {
+                if (areHeadingsHighlighted) {
+                    heading.classList.add('highlighted-heading');
+                } else {
+                    heading.classList.remove('highlighted-heading');
+                }
             }
         });
 
@@ -1046,44 +1049,7 @@
     }
 
     function resetAll() {
-        var elements = document.querySelectorAll('body *:not(#accessibility-widget, #accessibility-widget *, iframe, iframe *)');
-        elements.forEach(function (element) {
-            element.style.fontSize = '';
-            element.style.lineHeight = '';
-            element.style.backgroundColor = '';
-            element.style.color = '';
-            element.style.filter = '';
-            element.style.fontFamily = '';
-
-            element.classList.remove(
-                'high-contrast', 'low-contrast', 'legible-font',
-                'focus-mode', 'highlighted-link', 'highlighted-heading'
-            );
-        });
-
-        var animations = document.querySelectorAll('body *:not(#accessibility-widget, #accessibility-widget *, iframe, iframe *)');
-        animations.forEach(function (element) {
-            element.style.animationPlayState = 'running';
-            element.style.transition = '';
-        });
-
-        var images = document.querySelectorAll('body img');
-        images.forEach(function (image) {
-            image.style.display = '';
-        });
-
-        if (document.getElementById('custom-cursor')) {
-            document.getElementById('custom-cursor').remove();
-        }
-        document.body.style.cursor = '';
-
-        window.speechSynthesis.cancel();
-
-        var checkboxes = document.querySelectorAll('.switch input[type="checkbox"]');
-        checkboxes.forEach(function (checkbox) {
-            checkbox.checked = false;
-        });
-
+        // Primero resetear todas las variables de estado
         isSaturationOn = false;
         isHighContrastOn = false;
         isLowContrastOn = false;
@@ -1099,10 +1065,53 @@
         isBigCursorOn = false;
         isKeyboardNavOn = false;
         isVoiceNavOn = false;
-
         currentFontSizeMultiplier = 1;
         fontSizeSteps = 0;
         originalFontSizes.clear();
+
+        // Limpiar estilos de todos los elementos excepto el widget
+        var elements = document.querySelectorAll('body *:not(#accessibility-widget, #accessibility-widget *, iframe, iframe *)');
+        elements.forEach(function (element) {
+            element.style.fontSize = '';
+            element.style.lineHeight = '';
+            element.style.backgroundColor = '';
+            element.style.color = '';
+            element.style.filter = '';
+            element.style.fontFamily = '';
+            element.style.animationPlayState = 'running';
+            element.style.transition = '';
+
+            element.classList.remove(
+                'high-contrast', 'low-contrast', 'legible-font',
+                'focus-mode', 'highlighted-link', 'highlighted-heading'
+            );
+        });
+
+        // Restaurar imágenes
+        var images = document.querySelectorAll('body img:not(#accessibility-widget img)');
+        images.forEach(function (image) {
+            image.style.display = '';
+        });
+
+        // Remover cursor personalizado
+        if (document.getElementById('custom-cursor')) {
+            document.getElementById('custom-cursor').remove();
+        }
+        document.body.style.cursor = '';
+
+        // Cancelar síntesis de voz
+        window.speechSynthesis.cancel();
+
+        // Resetear todos los checkboxes del widget
+        var checkboxes = document.querySelectorAll('#accessibility-widget .switch input[type="checkbox"]');
+        checkboxes.forEach(function (checkbox) {
+            checkbox.checked = false;
+        });
+
+        // Remover event listeners si están activos
+        if (isKeyboardNavOn) {
+            document.removeEventListener('keydown', handleKeyboardNavigation);
+        }
     }
 
     function injectAccessibilityToIframes() {
